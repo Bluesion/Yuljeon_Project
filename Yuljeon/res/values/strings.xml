@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">율전중학교</string>
+    <string name="action_settings">설정</string>
+    <string name="title_section1">율전중 소식</string>
+    <string name="title_section2">홈페이지</string>
+    <string name="title_section3">개발자</string>
+    <string name="By">제작자 : 양원철</string>
+    <string name="Thanks">도움 : Mir</string>
+    <string name="abc">율전중 로고</string>
+    <string name="maintitle">설정</string>
+    <string name="title1">설정</string>
+    <string name="title2">설정</string>
+    <string name="smalltitle1">캐시 삭제</string>
+    <string name="settingtitle">캐시 삭제</string>
+    <string name="settingsub2">캐시 삭제</string>
+    <string name="settingbootchecksub">캐시 삭제</string>
+    <string name="settingbootcheck">캐시 삭제</string>
+    <string name="settingappdeletesub">캐시 삭제</string>
+    <string name="settingappdelete">캐시 삭제</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="pref_send_report">Send crash reports</string>
+    <string name="pref_send_report_summary">Helps to fix bugs</string>
+    <string name="pref_sync_frequency">Sync frequency</string>
+    <string name="pref_sync_frequency_summary">Set the sync frequency</string>
+    <string name="pref_user_name">Set username</string>
+    <string name="pref_user_name_summary">Set your username</string>
+    <string name="pref_user_profile">User Profile</string>
+    <string name="pref_update_setting">Update Settings</string>
+    <string name="menu_settings">Settings</string>
+</resources>
