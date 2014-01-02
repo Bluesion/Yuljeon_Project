@@ -4,4 +4,8 @@
         android:title="@string/settingtitle">
         <extra android:name="resource" android:value="preferences" />
     </header>
+    <header android:fragment="com.illusion.yuljeon.PrefsAbout" 
+        android:title="@string/settingtitle2">
+        <extra android:name="resource" android:value="preferences" />
+    </header>
 </preference-headers>
