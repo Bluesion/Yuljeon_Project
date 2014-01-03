@@ -1,11 +1,12 @@
 package com.illusion.yuljeon;
 
-import info.androidhive.slidingmenu.adapter.NavDrawerListAdapter;
-import info.androidhive.slidingmenu.model.NavDrawerItem;
 import java.util.ArrayList;
+import com.illusion.yuljeon1.NavDrawerListAdapter;
+import com.illusion.yuljeon2.NavDrawerItem;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.SearchManager;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
@@ -25,10 +26,10 @@ public class MainActivity extends Activity {
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
  
-    // nav drawer title
+    // navigation drawer title
     private CharSequence mDrawerTitle;
  
-    // used to store app title
+    // used to store application title
     private CharSequence mTitle;
  
     // slide menu items
@@ -48,7 +49,7 @@ public class MainActivity extends Activity {
         // load slide menu items
         navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
  
-        // nav drawer icons from resources
+        // navigation drawer icons from resources
         navMenuIcons = getResources()
                 .obtainTypedArray(R.array.nav_drawer_icons);
  
@@ -57,7 +58,7 @@ public class MainActivity extends Activity {
  
         navDrawerItems = new ArrayList<NavDrawerItem>();
  
-        // adding nav drawer items to array
+        // adding navigation drawer items to array
         // Home
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
         // Find People
@@ -77,19 +78,19 @@ public class MainActivity extends Activity {
  
         mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
  
-        // setting the nav drawer list adapter
+        // setting the navigation drawer list adapter
         adapter = new NavDrawerListAdapter(getApplicationContext(),
                 navDrawerItems);
         mDrawerList.setAdapter(adapter);
  
-        // enabling action bar app icon and behaving it as toggle button
+        // enabling action bar application icon and behaving it as toggle button
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
  
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
-                R.drawable.ic_drawer, //nav menu toggle icon
-                R.string.app_name, // nav drawer open - description for accessibility
-                R.string.app_name // nav drawer close - description for accessibility
+                R.drawable.ic_drawer, //navigation menu toggle icon
+                R.string.app_name, // navigation drawer open - description for accessibility
+                R.string.app_name // navigation drawer close - description for accessibility
         ) {
             public void onDrawerClosed(View view) {
                 getActionBar().setTitle(mTitle);
@@ -130,15 +131,29 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-	@Override
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-		if (Build.VERSION.SDK_INT < 11) {
-			 startActivity(new Intent(this, PreferencesActivity.class));
-			} else {
-			 startActivity(new Intent(this, OtherPreferencesActivity.class));
-			}
+         // The action bar home/up action should open or close the drawer.
+         // ActionBarDrawerToggle will take <span id="IL_AD11" class="IL_AD">care</span> of this.
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        // Handle action buttons
+        switch(item.getItemId()) {
+        case R.id.action_settings:
+            // create intent to perform web search for this planet
+            Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
+            intent.putExtra(SearchManager.QUERY, getActionBar().getTitle());
+            // catch event that there's no activity to handle intent
+            if (Build.VERSION.SDK_INT < 11) {
+   			 startActivity(new Intent(this, PreferencesActivity.class));
+   			} else {
+   			 startActivity(new Intent(this, OtherPreferencesActivity.class));
+   			}
+   		return false;
+   	}
 		return false;
-	}
+    }
  
     /***
      * Called when invalidateOptionsMenu() is triggered
@@ -152,7 +167,7 @@ public class MainActivity extends Activity {
     }
  
     /**
-     * Diplaying fragment view for selected nav drawer list item
+     * Displaying fragment view for selected navigation drawer list item
      * */
     private void displayView(int position) {
         // update the main content by replacing fragments
@@ -218,7 +233,7 @@ public class MainActivity extends Activity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        // Pass any configuration change to the drawer toggls
+        // Pass any configuration change to the drawer toggles
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
  

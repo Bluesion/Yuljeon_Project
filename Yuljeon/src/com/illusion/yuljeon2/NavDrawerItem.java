@@ -1,4 +1,4 @@
-package info.androidhive.slidingmenu.model;
+package com.illusion.yuljeon2;
  
 public class NavDrawerItem {
      

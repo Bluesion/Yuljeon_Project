@@ -1,7 +1,7 @@
-package info.androidhive.slidingmenu.adapter;
+package com.illusion.yuljeon1;
  
 import com.illusion.yuljeon.R;
-import info.androidhive.slidingmenu.model.NavDrawerItem;
+import com.illusion.yuljeon2.NavDrawerItem;
  
 import java.util.ArrayList;
  
