@@ -6,17 +6,21 @@
     <string name="settingtitle2">이 앱에 대해</string>
     <string name="settingappdeletesub">캐시를 삭제합니다.</string>
     <string name="settingappdelete">캐시 삭제</string>
-    <string name="builder">앱 제작자 : 양원철</string>
-    <string name="version">앱 버전 : 1.0.0</string>
+    <string name="builder">양원철</string>
+    <string name="version">1.0.0</string>
     <string name="drawer_open">Slider Menu Opened</string>
     <string name="drawer_close">Slider Menu Closed</string>
+    <string name="hello_world">안녕하세요</string>
+    <string name="cancel">취소</string>
+    <string name="fire">확인</string>
+    <string name="dialog_fire_missiles">캐시를 삭제하시겠습니까?</string>
     
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">
         <item >율전중 소개</item>
         <item >율전중 주요소식</item>
         <item >율전중 홈페이지</item>
-        <item >Communities</item>
+        <item >율전중 식단</item>
         <item >Pages</item>
         <item >What\'s Hot</item>
     </string-array>

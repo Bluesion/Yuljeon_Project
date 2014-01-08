@@ -1,9 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
-    <Preference
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:title="앱 제작자">
+            
+        <Preference
         android:key="builder"
         android:title="@string/builder" />
-    <Preference
+        
+    </PreferenceCategory>
+        
+    <PreferenceCategory
+            android:title="앱 버전">    
+        
+        <Preference
         android:key="version"
         android:title="@string/version" />
+        
+    </PreferenceCategory>    
 </PreferenceScreen>
