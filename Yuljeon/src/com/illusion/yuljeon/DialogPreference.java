@@ -19,7 +19,7 @@ public class DialogPreference extends android.preference.DialogPreference {
 	    super.onClick(dialog, which);
 
 	    if (which == DialogInterface.BUTTON_POSITIVE) {
-	      new CacheActivity().onDestroy();
+	      new CacheActivity().clearApplicationData();
 	    } 
 	  }
 	}

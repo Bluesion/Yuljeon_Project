@@ -19,22 +19,13 @@
                 android:title="title_checkbox_preference"
                 android:summary="summary_checkbox_preference" />
         
-        <EditTextPreference
-                android:key="edittext_preference"
-                android:title="title_edittext_preference"
-                android:summary="summary_edittext_preference"
-                android:dialogTitle="dialog_title_edittext_preference" />
+        <ListPreference
+            android:title="테마 변경"
+            android:summary="앱의 테마를 변경합니다."
+            android:key="theme"
+            android:defaultValue="0"
+            android:entries="@array/theme_entries"
+            android:entryValues="@array/theme_values" />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-            android:title="그 외">
-        
-        <EditTextPreference
-                android:key="edittext_preference"
-                android:title="title_edittext_preference"
-                android:summary="summary_edittext_preference"
-                android:dialogTitle="dialog_title_edittext_preference" />
-        
     </PreferenceCategory>
 </PreferenceScreen>

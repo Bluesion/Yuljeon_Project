@@ -1,6 +1,9 @@
 package com.illusion.yuljeon;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import com.illusion.yuljeon1.NavDrawerListAdapter;
 import com.illusion.yuljeon2.NavDrawerItem;
 import android.app.Activity;
@@ -20,6 +23,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
  
 public class MainActivity extends Activity {
     private DrawerLayout mDrawerLayout;
@@ -38,9 +42,14 @@ public class MainActivity extends Activity {
  
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter adapter;
+    
+    boolean btBackState = false; // 뒤로가기 버튼의 상태값을 갖는 변수
+    Timer timer = new Timer(); // 타이머 변수
+
  
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+    	Util.setAppTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
  
@@ -236,5 +245,17 @@ public class MainActivity extends Activity {
         // Pass any configuration change to the drawer toggles
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
- 
+    
+    public void onBackPressed() {
+    	if(btBackState == false) { // 한 번만 누른 경우
+    	timer.schedule(new TimerTask() {
+    	public void run() {
+    	btBackState = false;
+    	}
+    	}, 3000);
+    	btBackState = true;
+    	Toast.makeText(getApplicationContext(), R.string.exit_message, Toast.LENGTH_SHORT).show();
+    	} else // 3초 내에 두 번 누른 경우
+    	finish();
+    	}
 }

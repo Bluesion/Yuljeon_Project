@@ -11,9 +11,7 @@
     <string name="drawer_open">Slider Menu Opened</string>
     <string name="drawer_close">Slider Menu Closed</string>
     <string name="hello_world">안녕하세요</string>
-    <string name="cancel">취소</string>
-    <string name="fire">확인</string>
-    <string name="dialog_fire_missiles">캐시를 삭제하시겠습니까?</string>
+    <string name="exit_message">종료 하려면 한번 더 눌러주세요</string>
     
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">
