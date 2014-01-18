@@ -8,33 +8,32 @@
     <string name="settingappdelete">캐시 삭제</string>
     <string name="builder">양원철</string>
     <string name="version">1.0.0</string>
-    <string name="drawer_open">Slider Menu Opened</string>
-    <string name="drawer_close">Slider Menu Closed</string>
-    <string name="hello_world">안녕하세요</string>
-    <string name="exit_message">종료 하려면 한번 더 눌러주세요</string>
+    <string name="drawer_open">슬라이더 메뉴가 열립니다</string>
+    <string name="drawer_close">슬라이더 메뉴가 닫힙니다</string>
+    <string name="exit_message">한번 더 누르면 종료됩니다</string>
+    <string name="showcase_title">메뉴 펼치기</string>
+    <string name="showcase_message">슬라이더 메뉴를 열어 앱의 다양한 기능들을 만나보세요</string>
+    <string name="desc_list_item_icon">아이템 아이콘</string>
     
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">
+        <item >율전중학교</item>
         <item >율전중 소개</item>
         <item >율전중 주요소식</item>
         <item >율전중 홈페이지</item>
         <item >율전중 식단</item>
-        <item >Pages</item>
         <item >What\'s Hot</item>
     </string-array>
      
     <!-- Nav Drawer List Item Icons -->
     <!-- Keep them in order as the titles are in -->
     <array name="nav_drawer_icons">
-        <item>@drawable/ic_home</item>
-        <item>@drawable/ic_people</item>
-        <item>@drawable/ic_photos</item>
-        <item>@drawable/ic_communities</item>
-        <item>@drawable/ic_pages</item>
+        <item>@drawable/ic_main</item>
+        <item>@drawable/ic_lunch</item>
+        <item>@drawable/ic_introduce</item>
+        <item>@drawable/ic_sosik</item>
+        <item>@drawable/ic_webview</item>
         <item>@drawable/ic_whats_hot</item>
     </array>
-     
-    <!-- Content Description -->
-    <string name="desc_list_item_icon">Item Icon</string>
  
 </resources>
