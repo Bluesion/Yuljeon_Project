@@ -3,29 +3,23 @@
 
     <PreferenceCategory
             android:title="기본 설정">
-
-        <com.illusion.yuljeon.DialogPreference
-            android:title="@string/settingappdelete"
-            android:summary="@string/settingappdeletesub"
-            android:dialogIcon="@drawable/ic_dialog_alert_holo_light"      
-            android:dialogTitle="캐시 삭제"
-            android:key="rmcache"
-            android:dialogMessage="캐시를 삭제하시겠습니까?"
-            android:positiveButtonText="네"
-            android:negativeButtonText="아니요" />
-        
-        <CheckBoxPreference
-                android:key="checkbox_preference"
-                android:title="title_checkbox_preference"
-                android:summary="summary_checkbox_preference" />
         
         <ListPreference
             android:title="테마 변경"
-            android:summary="앱의 테마를 변경합니다."
+            android:summary="테마를 변경 후 앱을 다시 시작해주세요"
             android:key="theme"
             android:defaultValue="0"
             android:entries="@array/theme_entries"
             android:entryValues="@array/theme_values" />
+        
+        <ListPreference
+            android:title="액션바 색상 변경"
+            android:summary="액션바 색상을 변경 후 앱을 다시 시작해주세요"
+            android:key="actionbar"
+            android:defaultValue="0"
+            android:entries="@array/action_entries"
+            android:entryValues="@array/action_values" />
 
     </PreferenceCategory>
+        
 </PreferenceScreen>

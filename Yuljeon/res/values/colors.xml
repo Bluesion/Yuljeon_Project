@@ -2,8 +2,8 @@
 <resources>
     <color name="list_divider">#26000000</color>
     <color name="list_background">#fff5f5f5</color>
-    <color name="list_background_pressed">#38c0f4</color>
-    <color name="counter_text_color">#ffffffff</color>
-    <color name="counter_text_bg">#00ffffff</color>
-    <color name="list_item_title">#ff000000</color>
+    <color name="uva_color">#38c0f4</color>
+    <color name="press_color">#ffffffff</color>
+    <color name="default_text_color">#ff000000</color>
+    <color name="default_bg_color">#fff5f5f5</color>
 </resources>

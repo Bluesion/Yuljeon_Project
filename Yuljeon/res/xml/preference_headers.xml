@@ -5,6 +5,10 @@
         <extra android:name="resource" android:value="preferences" />
     </header>
     <header android:fragment="com.illusion.yuljeon.PrefsAbout" 
+        android:title="@string/settingtitle1">
+        <extra android:name="resource" android:value="preferences" />
+    </header>
+    <header android:fragment="com.illusion.yuljeon.PrefsOpensource" 
         android:title="@string/settingtitle2">
         <extra android:name="resource" android:value="preferences" />
     </header>

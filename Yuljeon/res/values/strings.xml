@@ -1,39 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">율전중학교</string>
-    <string name="action_settings">설정</string>
     <string name="settingtitle">설정</string>
-    <string name="settingtitle2">이 앱에 대해</string>
-    <string name="settingappdeletesub">캐시를 삭제합니다.</string>
-    <string name="settingappdelete">캐시 삭제</string>
-    <string name="builder">양원철</string>
-    <string name="version">1.0.0</string>
-    <string name="drawer_open">슬라이더 메뉴가 열립니다</string>
-    <string name="drawer_close">슬라이더 메뉴가 닫힙니다</string>
+    <string name="settingtitle1">이 앱에 대해</string>
+    <string name="settingtitle2">그 외</string>
+    <string name="builder">30115 양원철</string>
+    <string name="version">BETA</string>
     <string name="exit_message">한번 더 누르면 종료됩니다</string>
-    <string name="showcase_title">메뉴 펼치기</string>
-    <string name="showcase_message">슬라이더 메뉴를 열어 앱의 다양한 기능들을 만나보세요</string>
     <string name="desc_list_item_icon">아이템 아이콘</string>
-    
-    <!-- Nav Drawer Menu Items -->
-    <string-array name="nav_drawer_items">
-        <item >율전중학교</item>
-        <item >율전중 소개</item>
-        <item >율전중 주요소식</item>
-        <item >율전중 홈페이지</item>
-        <item >율전중 식단</item>
-        <item >What\'s Hot</item>
-    </string-array>
-     
-    <!-- Nav Drawer List Item Icons -->
-    <!-- Keep them in order as the titles are in -->
-    <array name="nav_drawer_icons">
-        <item>@drawable/ic_main</item>
-        <item>@drawable/ic_lunch</item>
-        <item>@drawable/ic_introduce</item>
-        <item>@drawable/ic_sosik</item>
-        <item>@drawable/ic_webview</item>
-        <item>@drawable/ic_whats_hot</item>
-    </array>
- 
+    <string name="helper">StackOverFlow 형님들</string>
+    <string name="helper2">미르 (whdghks913)</string>
+    <string name="helper3">한영빈 (sukso96100)</string>
+    <string name="title_activity_tutorial">튜토리얼</string>
+    <string name="tutorial_0">시작</string>
+    <string name="tutorial_0_1">환영합니다!</string>
+    <string name="tutorial_1">공지</string>
+    <string name="tutorial_2">광고</string>
+    <string name="tutorial_3">그 외</string>
+    <string name="tutorial_done">끝!</string>
 </resources>

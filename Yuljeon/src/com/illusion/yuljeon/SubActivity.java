@@ -1,6 +1,5 @@
 package com.illusion.yuljeon;
 
-
 import java.util.Timer;
 import java.util.TimerTask;
 import android.app.Activity;
@@ -29,7 +28,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
  
-public class MainActivity extends ActionBarActivity {
+public class SubActivity extends ActionBarActivity {
 	
 	private DrawerLayout			mDrawerLayout;
 	private ListView				mDrawerList;
@@ -85,7 +84,7 @@ public class MainActivity extends ActionBarActivity {
         
         Boolean firstrun = pref.getBoolean("firstrun", true);
         if (firstrun) {
-            Intent guide = new Intent(MainActivity.this, Tutorial.class);
+            Intent guide = new Intent(SubActivity.this, Tutorial.class);
             startActivity(guide);
             SharedPreferences.Editor editor = pref.edit();
             editor.putBoolean("firstrun", false);

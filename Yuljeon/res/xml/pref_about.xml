@@ -1,0 +1,42 @@
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <PreferenceCategory
+            android:title="제작자">
+        
+        <Preference
+        android:key="builder"
+        android:title="@string/builder" />
+        
+        </PreferenceCategory>
+        
+    <PreferenceCategory
+            android:title="버전">
+        
+        <Preference
+        android:key="version"
+        android:title="@string/version" />
+        
+        </PreferenceCategory>
+        
+    <PreferenceCategory
+            android:title="도움 주신 분">
+        
+        <Preference
+        android:key="helper1"
+        android:title="@string/helper"
+        android:summary="미안해요, 일일이 한명씩 쓸 수가 없었어요 ㅠㅠ"/>
+        
+        <Preference
+        android:key="helper2"
+        android:title="@string/helper2"
+        android:summary="여러 강좌 정말 감사합니다!" />
+        
+        <Preference
+        android:key="helper3"
+        android:title="@string/helper3"
+        android:summary="튜토리얼 감사해요!" />
+        
+        </PreferenceCategory>
+        
+</PreferenceScreen>
