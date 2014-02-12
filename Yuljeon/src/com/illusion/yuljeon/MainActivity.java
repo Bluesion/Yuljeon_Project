@@ -1,15 +1,19 @@
 package com.illusion.yuljeon;
 
-
 import java.util.Timer;
 import java.util.TimerTask;
+import uk.co.senab.actionbarpulltorefresh.library.ActionBarPullToRefresh;
+import uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout;
+import uk.co.senab.actionbarpulltorefresh.library.listeners.OnRefreshListener;
 import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.ListFragment;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -27,6 +31,7 @@ import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
  
 public class MainActivity extends ActionBarActivity {
@@ -232,32 +237,77 @@ public class MainActivity extends ActionBarActivity {
 		}
 	}
 	
-	public static class SosikFragment extends Fragment {
+	public static class SosikFragment extends ListFragment implements OnRefreshListener {
 
-	    ListView lv1;
+		private static String[] ITEMS = {"3월 3일 (월) : 율전중 개학식",
+			"3월 4일 (화) : 화요일"};
 
-	    @Override
-	    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-	            Bundle savedInstanceState) {
+		private PullToRefreshLayout mPullToRefreshLayout;
 
-	        if (container == null) {
-	          return null;
-	       }
-	                View view = inflater.inflate(R.layout.sosik, container, false);
+        @Override
+        public void onViewCreated(View view, Bundle savedInstanceState) {
+            super.onViewCreated(view,savedInstanceState);
+            ViewGroup viewGroup = (ViewGroup) view;
+            TextView tv = new TextView(getActivity());
+            tv.setText("율전중학교 3월 소식");
+            tv.setTextSize(getResources().getDimension(R.dimen.textsize));
+            getListView().addHeaderView(tv);
+            setListAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,
+                    new String[] { "Hello world" }));
 
-	                lv1 = (ListView) view.findViewById(R.id.list);
+            mPullToRefreshLayout = new PullToRefreshLayout(viewGroup.getContext());
 
-	                String[] adobe_products = getResources().getStringArray(R.array.listview);
+            ActionBarPullToRefresh.from(getActivity())
+                    .insertLayoutInto(viewGroup)
+                    .theseChildrenArePullable(android.R.id.list, android.R.id.empty)
+                    .listener(this)
+                    .setup(mPullToRefreshLayout);
+        }
 
-	               ArrayAdapter<String> files = new ArrayAdapter<String>(getActivity(), 
-	                        android.R.layout.simple_list_item_1, 
-	                        adobe_products);
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
-	               lv1.setAdapter(files);
+        setListAdapter(new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1, ITEMS));
+        setListShownNoAnimation(true);
+    }
+    
+    @Override
+    public void onDestroyView() {
+        setListAdapter(null);
+        super.onDestroyView();
+    }
 
-	        return view;
-	    }
-	}
+    @Override
+    public void onRefreshStarted(View view) {
+        setListShown(false);
+
+        new AsyncTask<Void, Void, Void>() {
+
+            @Override
+            protected Void doInBackground(Void... params) {
+                try {
+                    Thread.sleep(Constants.SIMULATED_REFRESH_LENGTH);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void result) {
+                super.onPostExecute(result);
+
+                mPullToRefreshLayout.setRefreshComplete();
+
+                if (getView() != null) {
+                    setListShown(true);
+                }
+            }
+        }.execute();
+    }
+}
 	
 	public static class WebviewFragment extends Fragment {
 
@@ -277,16 +327,100 @@ public class MainActivity extends ActionBarActivity {
 		}
 	}
 	
-	public static class LunchFragment extends Fragment {
+	public static class LunchFragment extends ListFragment implements OnRefreshListener {
 
-		public LunchFragment() {
-		}
+		private static String[] ITEMS = {"3월 3일 (월) : Singing Radiohead at the top of our lungs, With the boom box blaring as we are falling in love",
+			"3월 4일 (화) : 피플 라이크 어스, 위브 가타 스틱 투게더, 킾유어 핸즈 업, 나띵 라스츠 포에버",
+			"3월 5일 (수) : 김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치",
+            "3월 6일 (목) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 7일 (금) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 10일 (월) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 11일 (화) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 12일 (수) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 13일 (목) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 14일 (금) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 17일 (월) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 18일 (화) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 19일 (수) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 20일 (목) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 21일 (금) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 24일 (월) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 25일 (화) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 26일 (수) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 27일 (목) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 28일 (금) : 밥, 국, 김치, 에헤, 에헤헤",
+            "3월 31일 (월) : 밥, 국, 김치, 에헤, 에헤헤"};
 
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.lunch, container, false);
+		private PullToRefreshLayout mPullToRefreshLayout;
 
-			return rootView;
-		}
+        @Override
+        public void onViewCreated(View view, Bundle savedInstanceState) {
+            super.onViewCreated(view,savedInstanceState);
+            ViewGroup viewGroup = (ViewGroup) view;
+            TextView tv = new TextView(getActivity());
+            tv.setText("율전중학교 3월 급식");
+            tv.setTextSize(getResources().getDimension(R.dimen.textsize));
+            getListView().addHeaderView(tv);
+            setListAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,
+                    new String[] { "Hello world" }));
+
+            mPullToRefreshLayout = new PullToRefreshLayout(viewGroup.getContext());
+
+            ActionBarPullToRefresh.from(getActivity())
+                    .insertLayoutInto(viewGroup)
+                    .theseChildrenArePullable(android.R.id.list, android.R.id.empty)
+                    .listener(this)
+                    .setup(mPullToRefreshLayout);
+        }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        setListAdapter(new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1, ITEMS));
+        setListShownNoAnimation(true);
+    }
+    
+    @Override
+    public void onDestroyView() {
+        setListAdapter(null);
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onRefreshStarted(View view) {
+        setListShown(false);
+
+        new AsyncTask<Void, Void, Void>() {
+
+            @Override
+            protected Void doInBackground(Void... params) {
+                try {
+                    Thread.sleep(Constants.SIMULATED_REFRESH_LENGTH);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void result) {
+                super.onPostExecute(result);
+
+                mPullToRefreshLayout.setRefreshComplete();
+
+                if (getView() != null) {
+                    setListShown(true);
+                }
+            }
+        }.execute();
+    }
+}
+	
+	public class Constants {
+
+	    public static final int SIMULATED_REFRESH_LENGTH = 700;
+
 	}
 }

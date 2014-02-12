@@ -1,11 +1,9 @@
 <resources>
 
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-        <item name="android:activatedBackgroundIndicator">@drawable/slider_text_color</item>
     </style>
     
     <style name="Dark" parent="android:Theme.Holo">
-        <item name="android:activatedBackgroundIndicator">@drawable/slider_text_color</item>
     </style>
     
     <style name="Purple">

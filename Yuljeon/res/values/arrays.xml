@@ -35,19 +35,4 @@
         <item >율전중 식단</item>
     </string-array>
     
-    <string-array name="listview">
-        <item >2013. 12. 27 - 율전중학교 전교 회장 선거 실시</item>
-        <item >2013. 12. 31 - 율전중학교 겨울 방학식</item>
-        <item >2014. 02. 04 - 율전중학교 개학</item>
-        <item >2014. 02. 07 - 율전중학교 종업식</item>
-        <item >2014. 03. 03 - 율전중학교 2014 학년도 1학기 시작</item>
-    </string-array>
-
-    <array name="nav_drawer_icons">
-        <item>@drawable/ic_main</item>
-        <item>@drawable/ic_sosik</item>
-        <item>@drawable/ic_webview</item>
-        <item>@drawable/ic_lunch</item>
-    </array>
-    
 </resources>
