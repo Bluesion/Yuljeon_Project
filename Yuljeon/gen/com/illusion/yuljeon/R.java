@@ -1067,6 +1067,10 @@ containing a value of this type.
          */
         public static final int activity_horizontal_margin=0x7f080014;
         public static final int activity_vertical_margin=0x7f080015;
+        public static final int multiwindow_default_height=0x7f080019;
+        public static final int multiwindow_default_width=0x7f080018;
+        public static final int multiwindow_min_height=0x7f08001b;
+        public static final int multiwindow_min_width=0x7f08001a;
         public static final int padding_medium=0x7f080016;
         public static final int ptr_progress_bar_stroke_width=0x7f080002;
         public static final int spb_default_stroke_separator_length=0x7f080000;
@@ -1167,9 +1171,8 @@ containing a value of this type.
         public static final int ic_drawer=0x7f02005a;
         public static final int ic_launcher=0x7f02005b;
         public static final int next=0x7f02005c;
-        public static final int rocknroll=0x7f02005d;
-        public static final int slider_background_color=0x7f02005e;
-        public static final int slider_text_color=0x7f02005f;
+        public static final int slider_background_color=0x7f02005d;
+        public static final int slider_text_color=0x7f02005e;
     }
     public static final class id {
         public static final int action_bar=0x7f060029;
@@ -1183,7 +1186,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f06001f;
         public static final int action_menu_presenter=0x7f060020;
         public static final int action_mode_close_button=0x7f060031;
-        public static final int action_settings=0x7f060057;
+        public static final int action_settings=0x7f060058;
         public static final int activity_chooser_view_content=0x7f060032;
         public static final int always=0x7f060014;
         public static final int beginning=0x7f06001a;
@@ -1205,8 +1208,8 @@ containing a value of this type.
         public static final int icon=0x7f060037;
         public static final int ifRoom=0x7f060013;
         public static final int image=0x7f060034;
-        public static final int imageView1=0x7f06004e;
-        public static final int imageView2=0x7f060052;
+        public static final int imageView1=0x7f060056;
+        public static final int imageView2=0x7f060055;
         public static final int inside=0x7f060004;
         public static final int listMode=0x7f06000a;
         public static final int list_item=0x7f060036;
@@ -1249,16 +1252,17 @@ containing a value of this type.
         public static final int split_action_bar=0x7f06002b;
         public static final int submit_area=0x7f060046;
         public static final int tabMode=0x7f06000b;
-        public static final int textView=0x7f060051;
+        public static final int textView=0x7f060054;
         public static final int textView1=0x7f06004f;
-        public static final int textView2=0x7f060053;
-        public static final int textView3=0x7f060054;
-        public static final int textView4=0x7f060055;
+        public static final int textView2=0x7f06004e;
+        public static final int textView3=0x7f060051;
+        public static final int textView4=0x7f060052;
+        public static final int textView5=0x7f060053;
         public static final int title=0x7f060038;
         public static final int top_action_bar=0x7f06002d;
         public static final int up=0x7f06002e;
         public static final int useLogo=0x7f06000c;
-        public static final int webview=0x7f060056;
+        public static final int webview=0x7f060057;
         public static final int withText=0x7f060015;
     }
     public static final class integer {
@@ -1393,21 +1397,23 @@ containing a value of this type.
         public static final int version=0x7f0a0016;
     }
     public static final class style {
-        public static final int ActionbarBlueColor=0x7f0c0092;
-        public static final int ActionbarGrayColor=0x7f0c0094;
-        public static final int ActionbarGreenColor=0x7f0c008c;
-        public static final int ActionbarOrangeColor=0x7f0c0090;
-        public static final int ActionbarPurpleColor=0x7f0c0089;
-        public static final int ActionbarRedColor=0x7f0c008e;
-        public static final int ActionbarText=0x7f0c008a;
+        public static final int ActionbarBlueColor=0x7f0c0094;
+        public static final int ActionbarGrayColor=0x7f0c0096;
+        public static final int ActionbarGreenColor=0x7f0c008e;
+        public static final int ActionbarOrangeColor=0x7f0c0092;
+        public static final int ActionbarPurpleColor=0x7f0c008b;
+        public static final int ActionbarRedColor=0x7f0c0090;
+        public static final int ActionbarText=0x7f0c008c;
         public static final int AppBaseTheme=0x7f0c0086;
-        public static final int Blue=0x7f0c0091;
+        public static final int Blue=0x7f0c0093;
         public static final int Dark=0x7f0c0087;
-        public static final int Gray=0x7f0c0093;
-        public static final int Green=0x7f0c008b;
-        public static final int Orange=0x7f0c008f;
-        public static final int Purple=0x7f0c0088;
-        public static final int Red=0x7f0c008d;
+        public static final int FullAppBaseTheme=0x7f0c0088;
+        public static final int FullDark=0x7f0c0089;
+        public static final int Gray=0x7f0c0095;
+        public static final int Green=0x7f0c008d;
+        public static final int Orange=0x7f0c0091;
+        public static final int Purple=0x7f0c008a;
+        public static final int Red=0x7f0c008f;
         public static final int SmoothProgressBar=0x7f0c0001;
         /**  Mimic text appearance in select_dialog_item.xml 
          */

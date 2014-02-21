@@ -1,12 +1,12 @@
 Yuljeon Middle School Application for Android
-Copyright (C) 2014 Woncheol Yang<dnjscjf098@gmail.com>
+Copyright (C) 2014 Woncheol Yang <dnjscjf098@gmail.com>
 ====================
 
 율전중학교 애플리케이션은 다음과 같은 라이브러리를 필요로 합니다.
 
-- appcompat (android-support-v7)
-- actionbar pull to refresh
-- smooth progressbar
+- Appcompat (android-support-v7)
+- Actionbar pull to refresh (Actionbarcompat library 에 기존 Actionbar pull to refresh 라이브러리를 Import 한 후 율전 프로젝트에 다시 Import 해주시면 됩니다)
+- Smooth progressbar (Library Import 가 제대로 되지 않아 직접 폴더 째 옮기셔야 합니다)
 
 ====================
 

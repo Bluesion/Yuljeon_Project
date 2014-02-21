@@ -1,24 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent" >
 
-    <ImageView
-        android:id="@+id/imageView1"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/divider"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:text="1. 율전중학교 앱 아이콘 만들어주실 분 구해요!"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="20dp"
+        android:text="2. Navigation Drawer 에 대해 기술적으로 도움을 주실 수 있는 분은 따로 연락주세요 (테마 변경 관련)"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="20dp"
+        android:text="3. 기부는 언제나 환영하며, 에이브릴 라빈은 여신입니다!"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="20dp"
+        android:text="4. 제발 율전중학교는 이 앱에 많은 도움을 주셨으면 합니다. 시간표, 급식표, 학사 일정 등을 웹에서 자동으로 불러오지 못해 많은 어려움을 겪고 있으니 제발 지원 좀 해주시길."
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="7dp"
+        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/rocknroll" />
+        android:background="#ff33b5e5" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@+id/divider"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="16dp"
-        android:textColor="#ff000000"
-        android:textSize="20sp"
-        android:text="Rock Star, AVRIL LAVIGNE" />
-
+        android:text="안녕하세요!"
+        android:layout_marginLeft="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
 </RelativeLayout>

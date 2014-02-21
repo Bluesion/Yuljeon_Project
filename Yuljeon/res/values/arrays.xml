@@ -21,11 +21,15 @@
    <string-array name="theme_entries" translatable="false">
        <item>흰색 테마</item>
        <item>검은색 테마</item>
+       <item>풀스크린 흰색 테마</item>
+       <item>풀스크린 검은색 테마</item>
     </string-array>
     
    <string-array name="theme_values" translatable="false">
        <item>0</item>
        <item>1</item>
+       <item>2</item>
+       <item>3</item>
     </string-array>
 
     <string-array name="nav_drawer_items">

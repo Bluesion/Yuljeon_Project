@@ -20,11 +20,13 @@ import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnKeyListener;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -239,8 +241,7 @@ public class MainActivity extends ActionBarActivity {
 	
 	public static class SosikFragment extends ListFragment implements OnRefreshListener {
 
-		private static String[] ITEMS = {"3월 3일 (월) : 율전중 개학식",
-			"3월 4일 (화) : 화요일"};
+		private static String[] ITEMS = {"3월 3일 (월) : 율전중 개학식"};
 
 		private PullToRefreshLayout mPullToRefreshLayout;
 
@@ -321,6 +322,30 @@ public class MainActivity extends ActionBarActivity {
 	        webView.getSettings().setJavaScriptEnabled(true);
 	        webView.setWebViewClient(new WebViewClient());
 	        webView.loadUrl("http://www.yuljeon.ms.kr");
+	        webView.setOnKeyListener(new OnKeyListener()
+			{
+			    @Override
+			    public boolean onKey(View v, int keyCode, KeyEvent event)
+			    {
+			        if(event.getAction() == KeyEvent.ACTION_DOWN)
+			        {
+			            WebView webView = (WebView) v;
+
+			            switch(keyCode)
+			            {
+			                case KeyEvent.KEYCODE_BACK:
+			                    if(webView.canGoBack())
+			                    {
+			                        webView.goBack();
+			                        return true;
+			                    }
+			                    break;
+			            }
+			        }
+
+			        return false;
+			    }
+			});
 
 	    return mainView;
 	    
@@ -329,27 +354,27 @@ public class MainActivity extends ActionBarActivity {
 	
 	public static class LunchFragment extends ListFragment implements OnRefreshListener {
 
-		private static String[] ITEMS = {"3월 3일 (월) : Singing Radiohead at the top of our lungs, With the boom box blaring as we are falling in love",
-			"3월 4일 (화) : 피플 라이크 어스, 위브 가타 스틱 투게더, 킾유어 핸즈 업, 나띵 라스츠 포에버",
-			"3월 5일 (수) : 김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치김치",
-            "3월 6일 (목) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 7일 (금) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 10일 (월) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 11일 (화) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 12일 (수) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 13일 (목) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 14일 (금) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 17일 (월) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 18일 (화) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 19일 (수) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 20일 (목) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 21일 (금) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 24일 (월) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 25일 (화) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 26일 (수) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 27일 (목) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 28일 (금) : 밥, 국, 김치, 에헤, 에헤헤",
-            "3월 31일 (월) : 밥, 국, 김치, 에헤, 에헤헤"};
+		private static String[] ITEMS = {"3월 3일 (월) : 데이터가 없습니다",
+			"3월 4일 (화) : 데이터가 없습니다",
+			"3월 5일 (수) : 데이터가 없습니다",
+            "3월 6일 (목) : 데이터가 없습니다",
+            "3월 7일 (금) : 데이터가 없습니다",
+            "3월 10일 (월) : 데이터가 없습니다",
+            "3월 11일 (화) : 데이터가 없습니다",
+            "3월 12일 (수) : 데이터가 없습니다",
+            "3월 13일 (목) : 데이터가 없습니다",
+            "3월 14일 (금) : 데이터가 없습니다",
+            "3월 17일 (월) : 데이터가 없습니다",
+            "3월 18일 (화) : 데이터가 없습니다",
+            "3월 19일 (수) : 데이터가 없습니다",
+            "3월 20일 (목) : 데이터가 없습니다",
+            "3월 21일 (금) : 데이터가 없습니다",
+            "3월 24일 (월) : 데이터가 없습니다",
+            "3월 25일 (화) : 데이터가 없습니다",
+            "3월 26일 (수) : 데이터가 없습니다",
+            "3월 27일 (목) : 데이터가 없습니다",
+            "3월 28일 (금) : 데이터가 없습니다",
+            "3월 31일 (월) : 데이터가 없습니다"};
 
 		private PullToRefreshLayout mPullToRefreshLayout;
 
@@ -421,6 +446,5 @@ public class MainActivity extends ActionBarActivity {
 	public class Constants {
 
 	    public static final int SIMULATED_REFRESH_LENGTH = 700;
-
 	}
 }

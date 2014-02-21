@@ -3,4 +3,8 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="padding_medium">8dp</dimen>
     <dimen name="textsize">15sp</dimen>
+    <dimen name="multiwindow_default_width">10.0dip</dimen>
+    <dimen name="multiwindow_default_height">10.0dip</dimen>
+    <dimen name="multiwindow_min_width">10.0dip</dimen>
+    <dimen name="multiwindow_min_height">10.0dip</dimen>
 </resources>

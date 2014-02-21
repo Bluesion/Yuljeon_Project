@@ -25,5 +25,15 @@ public class Utils extends Activity {
 	        a.setTheme(R.style.Dark);
 	        }
 	    }
+	    if (mTheme == 2) {
+	        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+	        a.setTheme(R.style.FullAppBaseTheme);
+	        }
+	    }
+	    if (mTheme == 3) {
+	        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+	        a.setTheme(R.style.FullDark);
+	        }
+	    }
 	}
 }

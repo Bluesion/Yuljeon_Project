@@ -6,6 +6,14 @@
     <style name="Dark" parent="@style/Theme.AppCompat">
     </style>
     
+    <style name="FullAppBaseTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="FullDark" parent="@style/Theme.AppCompat">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    
     <style name="Purple">
         <item name="actionBarStyle">@style/ActionbarPurpleColor</item>
     </style>
