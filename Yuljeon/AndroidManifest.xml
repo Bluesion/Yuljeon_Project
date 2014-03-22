@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.illusion.yuljeon"
+    package="com.woncheol.yuljeon"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
+    
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
 
     <application
@@ -21,25 +23,33 @@
         <meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W" android:resource="@dimen/multiwindow_min_width" />
         <meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H" android:resource="@dimen/multiwindow_min_height" />
         <activity
-            android:name="com.illusion.yuljeon.MainActivity"
-            android:label="@string/app_name" >
+            android:name="com.woncheol.yuljeon.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
             </intent-filter>
-            </activity>
-        <activity
-            android:name="com.illusion.yuljeon.PreferencesActivity"
-            android:label="@string/settingtitle">
         </activity>
         <activity
-            android:name="com.illusion.yuljeon.OtherPreferencesActivity"
-            android:label="@string/settingtitle">
-        </activity>
+            android:name="com.woncheol.yuljeon.Tutorial"
+            android:label="튜토리얼" />
         <activity
-            android:name="com.illusion.yuljeon.Tutorial"
-            android:label="@string/title_activity_tutorial">
-        </activity>
+            android:name="com.woncheol.yuljeon.Bap"
+            android:label="식단" />
+        <activity
+            android:name="com.woncheol.yuljeon.Call"
+            android:label="연락처" />
+        <activity
+            android:name="com.woncheol.yuljeon.Schedule"
+            android:label="일정" />
+        <activity
+            android:name="com.woncheol.yuljeon.Webview"
+            android:label="홈페이지" />
+        <activity
+            android:name="com.woncheol.yuljeon.PrefsFragment"
+            android:label="설정" />
     </application>
+
 </manifest>

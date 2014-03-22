@@ -1,0 +1,17 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    
+    <string name="3" >입학식</string>
+    <string name="3_Day" >월</string>
+    
+    <string name="13" >학급 임원 선거</string>
+    <string name="13_Day" >목</string>
+	
+    <string name="20" >학부모 총회</string>
+    <string name="20_Day" >목</string>
+    
+    <string name="25" >진로 교육</string>
+    <string name="25_Day" >화</string>
+	
+    <int name="days" value="31" />
+</map>

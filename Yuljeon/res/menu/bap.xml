@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:yourapp="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/sync"
+        android:icon="@drawable/ic_menu_rotate"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        yourapp:showAsAction="ifRoom"
+        android:title="새로고침"/>
+
+</menu>

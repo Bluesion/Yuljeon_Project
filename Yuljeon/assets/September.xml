@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+	
+    <string name="2" >영어 듣기 능력 평가 (1학년)</string>
+    <string name="2_Day" >화</string>
+	
+    <string name="3" >영어 듣기 능력 평가 (2학년)</string>
+    <string name="3_Day" >수</string>
+	
+    <string name="4" >영어 듣기 능력 평가 (3학년)</string>
+    <string name="4_Day" >목</string>
+    
+    <string name="7" >추석 연휴</string>
+    <string name="7_Day" >일</string>
+	<boolean name="7_Day_holiday" value="true" />
+	
+    <string name="8" >추석</string>
+    <string name="8_Day" >월</string>
+	<boolean name="8_Day_holiday" value="true" />
+	
+    <string name="9" >추석 연휴</string>
+    <string name="9_Day" >화</string>
+	<boolean name="9_Day_holiday" value="true" />
+	
+    <string name="10" >대체 공휴일 (추석 연휴)</string>
+    <string name="10_Day" >수</string>
+	<boolean name="10_Day_holiday" value="true" />
+	
+	<string name="27" >에이브릴 라빈 생일</string>
+    <string name="27_Day" >토</string>
+    
+    <string name="29" >2학기 중간고사</string>
+    <string name="29_Day" >월</string>
+    
+    <string name="30" >2학기 중간고사</string>
+    <string name="30_Day" >화</string>
+	
+    <int name="days" value="30" />
+</map>

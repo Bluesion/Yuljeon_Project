@@ -1,25 +1,47 @@
 <PreferenceScreen
         xmlns:android="http://schemas.android.com/apk/res/android">
-
+    
     <PreferenceCategory
-            android:title="기본 설정">
+            android:title="앱 소스 주소 및 제작자 메일">
         
-        <ListPreference
-            android:title="테마 변경"
-            android:summary="테마를 변경 후 앱을 다시 시작해주세요"
-            android:key="theme"
-            android:defaultValue="0"
-            android:entries="@array/theme_entries"
-            android:entryValues="@array/theme_values" />
+        <Preference
+            android:title="율전중 앱 소스"
+            android:summary="https://github.com/gpillusion/Yuljeon_Project"
+            android:key="Opensource" />
         
-        <ListPreference
-            android:title="액션바 색상 변경"
-            android:summary="액션바 색상을 변경 후 앱을 다시 시작해주세요"
-            android:key="actionbar"
-            android:defaultValue="0"
-            android:entries="@array/action_entries"
-            android:entryValues="@array/action_values" />
-
-    </PreferenceCategory>
+        <Preference
+            android:key="singo"
+            android:title="메일 보내기"
+            android:summary="메일 앱이 디바이스에 설치되어 있어야 합니다" />
+        
+        </PreferenceCategory>
+        
+    <PreferenceCategory
+            android:title="이 앱에 대해">
+        
+        <Preference
+            android:title="제작자 : 30115 양원철" />
+        
+        <Preference
+            android:title="앱 버전 : 1.0.0" />
+        
+        </PreferenceCategory>
+        
+    <PreferenceCategory
+            android:title="도움 주신 분">
+        
+        <Preference
+            android:title="StackOverFlow 형님들"
+            android:summary="미안해요, 일일이 한명씩 쓸 수가 없었어요 ㅠㅠ"/>
+        
+        <Preference
+            android:title="한영빈 (sukso96100)"
+            android:summary="튜토리얼 감사해요!" />
+        
+        <Preference
+            android:title="미르 (whdghks913)"
+            android:summary="앱의 처음부터 끝까지 도움 주셔서 감사합니다 :D" />
+        
+        </PreferenceCategory>
         
 </PreferenceScreen>
