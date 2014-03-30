@@ -3,9 +3,6 @@
 
     <string name="18" >개학식</string>
     <string name="18_Day" >월</string>
-    
-    <string name="26" >진로 교육</string>
-    <string name="26_Day" >화</string>
 	
     <int name="days" value="31" />
 </map>

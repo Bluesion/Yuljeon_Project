@@ -20,9 +20,6 @@
     
     <string name="9" >교과 체험 학습</string>
     <string name="9_Day" >금</string>
-    
-    <string name="19" >진로 교육</string>
-    <string name="19_Day" >월</string>
 	
     <int name="days" value="31" />
 </map>

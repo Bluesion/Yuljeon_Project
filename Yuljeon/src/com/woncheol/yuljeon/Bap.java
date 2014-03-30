@@ -1,14 +1,17 @@
 package com.woncheol.yuljeon;
 
 import java.lang.ref.WeakReference;
+
 import toast.library.meal.MealLibrary;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -49,6 +52,8 @@ public class Bap extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_bap);
 		getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#AA66CC")));
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
+            getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		mListView = (ListView) findViewById(R.id.mBapList);
 
@@ -233,6 +238,16 @@ public class Bap extends ActionBarActivity {
 				mHelper.show();
 			}
 		}
+		
+		if (ItemId == R.id.about) {
+			startActivity(new Intent(Bap.this, About.class));
+		}
+		
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			finish();
+			return true;
+	}
 
 		return super.onOptionsItemSelected(item);
 	}

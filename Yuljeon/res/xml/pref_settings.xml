@@ -1,5 +1,15 @@
 <PreferenceScreen
         xmlns:android="http://schemas.android.com/apk/res/android">
+        
+    <PreferenceCategory
+            android:title="일반 설정">
+        
+        <Preference
+            android:title="튜토리얼 다시 보기"
+            android:key="tutorial"
+            android:summary="튜토리얼을 다시 보려면 클릭하세요" />
+        
+        </PreferenceCategory>
     
     <PreferenceCategory
             android:title="앱 소스 주소 및 제작자 메일">
@@ -20,10 +30,14 @@
             android:title="이 앱에 대해">
         
         <Preference
-            android:title="제작자 : 30115 양원철" />
+            android:title="제작자"
+            android:summary="30115 양원철"
+            android:key="builder" />
         
         <Preference
-            android:title="앱 버전 : 1.0.0" />
+            android:title="앱 버전"
+            android:key="version"
+            android:summary="BUILD_Rock_N_Roll_AVRIL_LAVIGNE" />
         
         </PreferenceCategory>
         
@@ -32,15 +46,20 @@
         
         <Preference
             android:title="StackOverFlow 형님들"
-            android:summary="미안해요, 일일이 한명씩 쓸 수가 없었어요 ㅠㅠ"/>
+            android:clickable="false"
+            android:summary="미안해요, 일일이 한명씩 쓸 수가 없었어요 ㅠㅠ" />
         
         <Preference
-            android:title="한영빈 (sukso96100)"
+            android:title="한영빈 (sukso96100) 님"
             android:summary="튜토리얼 감사해요!" />
         
         <Preference
-            android:title="미르 (whdghks913)"
-            android:summary="앱의 처음부터 끝까지 도움 주셔서 감사합니다 :D" />
+            android:title="미르 (whdghks913) 님"
+            android:summary="앱의 처음부터 끝까지 도움 주셔서 감사합니다 :)" />
+        
+        <Preference
+            android:title="이온 (kjhw_1025) 님"
+            android:summary="웹뷰부분에서 큰 도움 주셨습니다 :D" />
         
         </PreferenceCategory>
         

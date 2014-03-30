@@ -42,14 +42,16 @@ public class MainActivity extends ActionBarActivity {
 
 		mAdapter.addItem(getResources().getDrawable(R.drawable.bap), "식단",
 				"오늘 나오는 급식을 확인할 수 있습니다");
-		mAdapter.addItem(getResources().getDrawable(R.drawable.calender), "일정",
+		mAdapter.addItem(getResources().getDrawable(R.drawable.calendar), "일정",
 				"학교의 일정을 확인할 수 있습니다");
 		mAdapter.addItem(getResources().getDrawable(R.drawable.call), "연락처",
 				"학교로 전화를 할 수 있습니다");
-		mAdapter.addItem(getResources().getDrawable(R.drawable.call), "학교 홈페이지",
+		mAdapter.addItem(getResources().getDrawable(R.drawable.browser), "학교 홈페이지",
 				"학교 홈페이지를 방문합니다");
-		mAdapter.addItem(getResources().getDrawable(R.drawable.call), "설정",
-				"");
+		mAdapter.addItem(getResources().getDrawable(R.drawable.haksaeng), "학생부 소식",
+				"학생부의 소식을 들어보세요");
+		mAdapter.addItem(getResources().getDrawable(R.drawable.settings), "설정",
+				"이 앱에 대한 자세한 정보를 알 수 있습니다");
 		
 		SharedPreferences pref = getSharedPreferences("pref", Activity.MODE_PRIVATE);
 		
@@ -80,6 +82,8 @@ public class MainActivity extends ActionBarActivity {
 				} else if (position == 3) {
 					startActivity(new Intent(MainActivity.this, Webview.class));
 				} else if (position == 4) {
+					startActivity(new Intent(MainActivity.this, Haksaeng.class));
+				} else if (position == 5) {
 					startActivity(new Intent(MainActivity.this, PrefsFragment.class));
 				}
 			}

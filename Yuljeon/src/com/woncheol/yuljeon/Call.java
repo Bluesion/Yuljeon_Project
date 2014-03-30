@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
@@ -27,6 +28,8 @@ public class Call extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_call);
 		getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#c74b46")));
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
+            getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		mListView = (ListView) findViewById(R.id.mContactsList);
 
@@ -66,4 +69,13 @@ public class Call extends ActionBarActivity {
 
 		mHelper.cencle(true);
 	}
+	
+	public boolean onOptionsItemSelected(android.view.MenuItem item) {
+		switch (item.getItemId()) {
+			case android.R.id.home:
+				finish();
+				return true;
+		}
+		return super.onOptionsItemSelected(item);
+	};
 }

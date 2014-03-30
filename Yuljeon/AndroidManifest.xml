@@ -48,6 +48,21 @@
             android:name="com.woncheol.yuljeon.Webview"
             android:label="홈페이지" />
         <activity
+            android:name="com.woncheol.yuljeon.About"
+            android:label="식단" />
+        <activity
+            android:name="com.woncheol.yuljeon.TutorialWebview"
+            android:label="도움말" />
+        <activity
+            android:name="com.woncheol.yuljeon.Haksaeng"
+            android:label="학생부 소식" />
+        <activity
+            android:name="com.woncheol.yuljeon.Builder"
+            android:label="히든메뉴" />
+        <activity
+            android:name="com.woncheol.yuljeon.Version"
+            android:label="히든메뉴" />
+        <activity
             android:name="com.woncheol.yuljeon.PrefsFragment"
             android:label="설정" />
     </application>

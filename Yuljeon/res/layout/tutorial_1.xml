@@ -1,6 +1,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
     android:background="@android:color/white">
 
     <TextView
@@ -21,18 +26,7 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="20dp"
-        android:text="2. 기부는 언제나 환영입니다!"
-        android:textColor="#ff000000"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="20dp"
-        android:text="3. 에이브릴 라빈은 여신입니다!"
+        android:text="2. 에이브릴 라빈은 여신입니다!"
         android:textColor="#ff000000"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -46,12 +40,23 @@
         android:background="@android:color/darker_gray" />
 
     <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="20dp"
+        android:text="3. 본 앱의 정식 지원 기간은 2014년 12월 31일까지 이며, 그 후의 지원은 검토 중입니다"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#ff000000" />
+
+    <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/divider"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="30dp"
         android:text="공지사항"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#ff000000" />
