@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+   <string-array name="theme_entries" translatable="false">
+       <item>기본 테마</item>
+       <item>풀스크린 테마</item>
+    </string-array>
+    
+</resources>

@@ -1,0 +1,25 @@
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        
+    <PreferenceCategory
+            android:title="기술적인 도움 주신분들">
+        
+        <Preference
+            android:title="StackOverFlow 형님들"
+            android:summary="미안해요, 일일이 한명씩 쓸 수가 없었어요 ㅠㅠ" />
+        
+        <Preference
+            android:title="한영빈 (sukso96100) 님"
+            android:summary="튜토리얼 감사해요!" />
+        
+        <Preference
+            android:title="미르 (whdghks913) 님"
+            android:summary="앱의 처음부터 끝까지 도움 주셔서 감사합니다 :)" />
+        
+        <Preference
+            android:title="이온 (kjhw_1025) 님"
+            android:summary="웹뷰부분에서 큰 도움 주셨습니다 :D" />
+        
+        </PreferenceCategory>
+        
+</PreferenceScreen>

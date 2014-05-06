@@ -46,10 +46,6 @@ class BapListViewAdapter extends BaseAdapter {
 		mListData.clear();
 	}
 
-	// public void sort() {
-	// Collections.sort(mListData, BapListData.ALPHA_COMPARATOR);
-	// }
-
 	@Override
 	public int getCount() {
 		return mListData.size();

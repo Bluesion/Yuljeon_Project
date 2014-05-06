@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -22,15 +21,17 @@ public class Webview extends ActionBarActivity {
 	private SlidingDrawer slide;
 
 	public void onCreate(Bundle savedInstanceState) {
+		Utils.setAppTheme(this);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.webview);
 		getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3f9fe0")));
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-            getActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 		webView = (WebView) findViewById(R.id.webview);
-		webView.getSettings().setJavaScriptEnabled(true);
 		webView.loadUrl("http://www.yuljeon.ms.kr");
+		webView.getSettings().setJavaScriptEnabled(true);
+		webView.getSettings().setBuiltInZoomControls(true);
+		webView.getSettings().setSupportZoom(true);
 		webView.setWebViewClient(new myWebViewClient() {
 		    @Override
 		    public boolean shouldOverrideUrlLoading(WebView view, String url) {

@@ -31,6 +31,7 @@ public class MainActivity extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		Utils.setAppTheme(this);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#666666")));

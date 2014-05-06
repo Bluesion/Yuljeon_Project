@@ -15,11 +15,5 @@
     <string name="6_Day" >화</string>
     <boolean name="6_Day_holiday" value="true" />
 	
-    <string name="8" >교내 체육대회</string>
-    <string name="8_Day" >목</string>
-    
-    <string name="9" >교과 체험 학습</string>
-    <string name="9_Day" >금</string>
-	
     <int name="days" value="31" />
 </map>

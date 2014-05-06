@@ -2,7 +2,7 @@ package com.woncheol.yuljeon;
 
 import java.lang.ref.WeakReference;
 import java.util.Calendar;
-
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
@@ -10,7 +10,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -22,11 +21,10 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.tistory.whdghks913.croutonhelper.CroutonHelper;
-
 import de.keyboardsurfer.android.widget.crouton.Style;
 
+@SuppressLint("HandlerLeak")
 public class Schedule extends ActionBarActivity {
 	
 	private final String loadingList = "데이터를 가져오고 있습니다..";
@@ -46,11 +44,11 @@ public class Schedule extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		Utils.setAppTheme(this);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_schedule);
 		getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#f4842d")));
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-            getActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 		mListView = (ListView) findViewById(R.id.mScheduleList);
 		mAdapter = new ScheduleListViewAdapter(this);

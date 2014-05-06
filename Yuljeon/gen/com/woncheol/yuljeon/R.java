@@ -16,6 +16,10 @@ public final class R {
         public static final int abc_slide_out_bottom=0x7f040004;
         public static final int abc_slide_out_top=0x7f040005;
     }
+    public static final class array {
+        public static final int theme_entries=0x7f0d0000;
+        public static final int theme_values=0x7f0d0001;
+    }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -1008,18 +1012,16 @@ containing a value of this type.
         public static final int ic_menu_forward=0x7f02006d;
         public static final int ic_menu_rotate=0x7f02006e;
         public static final int next=0x7f02006f;
-        public static final int notice_1=0x7f020070;
-        public static final int notice_2=0x7f020071;
-        public static final int reload=0x7f020072;
-        public static final int reloadp=0x7f020073;
-        public static final int rldb=0x7f020074;
-        public static final int school=0x7f020075;
-        public static final int settings=0x7f020076;
+        public static final int reload=0x7f020070;
+        public static final int reloadp=0x7f020071;
+        public static final int rldb=0x7f020072;
+        public static final int school=0x7f020073;
+        public static final int settings=0x7f020074;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f060059;
-        public static final int SD=0x7f06005d;
-        public static final int about=0x7f060063;
+        public static final int LinearLayout1=0x7f060063;
+        public static final int SD=0x7f060067;
+        public static final int about=0x7f06006d;
         public static final int action_bar=0x7f06001c;
         public static final int action_bar_activity_content=0x7f060015;
         public static final int action_bar_container=0x7f06001b;
@@ -1033,63 +1035,63 @@ containing a value of this type.
         public static final int action_mode_close_button=0x7f060024;
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
-        public static final int back=0x7f060065;
-        public static final int backBtn=0x7f060060;
+        public static final int back=0x7f06006f;
+        public static final int backBtn=0x7f06006a;
         public static final int beginning=0x7f060011;
-        public static final int buttons=0x7f06005f;
+        public static final int buttons=0x7f060069;
         public static final int checkbox=0x7f06002d;
         public static final int collapseActionView=0x7f06000d;
         public static final int default_activity_button=0x7f060028;
         public static final int dialog=0x7f06000e;
         public static final int disableHome=0x7f060008;
-        public static final int divider=0x7f060040;
-        public static final int divider2=0x7f060042;
-        public static final int divider3=0x7f060044;
+        public static final int divider=0x7f06003d;
+        public static final int divider2=0x7f06004e;
+        public static final int divider3=0x7f06004f;
         public static final int dropdown=0x7f06000f;
         public static final int edit_query=0x7f060030;
         public static final int end=0x7f060013;
         public static final int expand_activities_button=0x7f060026;
         public static final int expanded_menu=0x7f06002c;
-        public static final int forward=0x7f060066;
-        public static final int forwardBtn=0x7f060061;
-        public static final int handle=0x7f06005e;
+        public static final int forward=0x7f060070;
+        public static final int forwardBtn=0x7f06006b;
+        public static final int handle=0x7f060068;
         public static final int home=0x7f060014;
         public static final int homeAsUp=0x7f060005;
         public static final int icon=0x7f06002a;
         public static final int ifRoom=0x7f06000a;
         public static final int image=0x7f060027;
-        public static final int imageView1=0x7f06003c;
-        public static final int imageView2=0x7f060058;
+        public static final int imageView1=0x7f06004c;
+        public static final int imageView2=0x7f060062;
         public static final int listMode=0x7f060001;
         public static final int list_item=0x7f060029;
-        public static final int mBapList=0x7f06003d;
-        public static final int mCalender=0x7f06004c;
-        public static final int mContactsList=0x7f06003e;
-        public static final int mDate=0x7f06004d;
-        public static final int mDay=0x7f060054;
-        public static final int mDayOfTheWeek=0x7f060055;
-        public static final int mImage=0x7f060046;
-        public static final int mList=0x7f060047;
-        public static final int mListImage=0x7f060051;
-        public static final int mListLargeText=0x7f060052;
-        public static final int mListMediumText=0x7f060053;
-        public static final int mLunch=0x7f06004f;
-        public static final int mMonth=0x7f060048;
-        public static final int mMorning=0x7f06004e;
-        public static final int mNight=0x7f060050;
-        public static final int mScheduleList=0x7f060049;
-        public static final int mText=0x7f060056;
+        public static final int mBapList=0x7f06004b;
+        public static final int mCalender=0x7f060056;
+        public static final int mContactsList=0x7f06004d;
+        public static final int mDate=0x7f060057;
+        public static final int mDay=0x7f06005e;
+        public static final int mDayOfTheWeek=0x7f06005f;
+        public static final int mImage=0x7f060050;
+        public static final int mList=0x7f060051;
+        public static final int mListImage=0x7f06005b;
+        public static final int mListLargeText=0x7f06005c;
+        public static final int mListMediumText=0x7f06005d;
+        public static final int mLunch=0x7f060059;
+        public static final int mMonth=0x7f060052;
+        public static final int mMorning=0x7f060058;
+        public static final int mNight=0x7f06005a;
+        public static final int mScheduleList=0x7f060053;
+        public static final int mText=0x7f060060;
         public static final int middle=0x7f060012;
         public static final int never=0x7f060009;
         public static final int none=0x7f060010;
         public static final int normal=0x7f060000;
-        public static final int pager=0x7f06004a;
-        public static final int pager_title_strip=0x7f06004b;
-        public static final int progressBar1=0x7f06005c;
+        public static final int pager=0x7f060054;
+        public static final int pager_title_strip=0x7f060055;
+        public static final int progressBar1=0x7f060066;
         public static final int progress_circular=0x7f060018;
         public static final int progress_horizontal=0x7f060019;
         public static final int radio=0x7f06002f;
-        public static final int reload=0x7f060062;
+        public static final int reload=0x7f06006c;
         public static final int search_badge=0x7f060032;
         public static final int search_bar=0x7f060031;
         public static final int search_button=0x7f060033;
@@ -1100,25 +1102,35 @@ containing a value of this type.
         public static final int search_plate=0x7f060036;
         public static final int search_src_text=0x7f060037;
         public static final int search_voice_btn=0x7f06003b;
-        public static final int secondscreen=0x7f06005a;
+        public static final int secondscreen=0x7f060064;
         public static final int shortcut=0x7f06002e;
         public static final int showCustom=0x7f060007;
         public static final int showHome=0x7f060004;
         public static final int showTitle=0x7f060006;
         public static final int split_action_bar=0x7f06001e;
         public static final int submit_area=0x7f060039;
-        public static final int sync=0x7f060064;
+        public static final int sync=0x7f06006e;
         public static final int tabMode=0x7f060002;
-        public static final int textView=0x7f060057;
-        public static final int textView1=0x7f060041;
-        public static final int textView2=0x7f060043;
+        public static final int textView=0x7f060061;
+        public static final int textView1=0x7f06003c;
+        public static final int textView10=0x7f060046;
+        public static final int textView11=0x7f060047;
+        public static final int textView12=0x7f060048;
+        public static final int textView13=0x7f060049;
+        public static final int textView14=0x7f06004a;
+        public static final int textView2=0x7f06003e;
         public static final int textView3=0x7f06003f;
-        public static final int textView4=0x7f060045;
+        public static final int textView4=0x7f060040;
+        public static final int textView5=0x7f060041;
+        public static final int textView6=0x7f060042;
+        public static final int textView7=0x7f060043;
+        public static final int textView8=0x7f060044;
+        public static final int textView9=0x7f060045;
         public static final int title=0x7f06002b;
         public static final int top_action_bar=0x7f060020;
         public static final int up=0x7f060021;
         public static final int useLogo=0x7f060003;
-        public static final int webview=0x7f06005b;
+        public static final int webview=0x7f060065;
         public static final int withText=0x7f06000c;
     }
     public static final class integer {
@@ -1195,9 +1207,9 @@ containing a value of this type.
         public static final int webview_tutorial_done=0x7f03002d;
     }
     public static final class menu {
-        public static final int bap=0x7f0d0000;
-        public static final int schedule=0x7f0d0001;
-        public static final int webview=0x7f0d0002;
+        public static final int bap=0x7f0e0000;
+        public static final int schedule=0x7f0e0001;
+        public static final int webview=0x7f0e0002;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1252,6 +1264,8 @@ containing a value of this type.
         public static final int webview_tutorial_done=0x7f0b0015;
     }
     public static final class style {
+        public static final int AppBaseTheme=0x7f0c0083;
+        public static final int FullAppBaseTheme=0x7f0c0084;
         /**  Mimic text appearance in select_dialog_item.xml 
          */
         public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog=0x7f0c0063;
@@ -1441,7 +1455,10 @@ containing a value of this type.
         public static final int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0c0022;
     }
     public static final class xml {
-        public static final int pref_settings=0x7f050000;
+        public static final int pref_application=0x7f050000;
+        public static final int pref_settings=0x7f050001;
+        public static final int pref_techhelp=0x7f050002;
+        public static final int pref_tester=0x7f050003;
     }
     public static final class styleable {
         /**  ============================================ 

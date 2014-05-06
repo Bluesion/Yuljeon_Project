@@ -26,6 +26,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="목요장기자랑 프로그램, '멋지다 친구야' 의 출연자를 모집하고 있으니 많은 관심 부탁드립니다~" />
     
     <View
@@ -53,6 +54,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="전교 회의 결과가 존재하지 않습니다" />
 
 </LinearLayout>

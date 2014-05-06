@@ -2,7 +2,6 @@ package com.woncheol.yuljeon;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 
@@ -10,11 +9,11 @@ public class About extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		Utils.setAppTheme(this);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_about);
 		getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#AA66CC")));
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-            getActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 	
 	public boolean onOptionsItemSelected(android.view.MenuItem item) {

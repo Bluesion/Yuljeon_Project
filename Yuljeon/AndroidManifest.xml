@@ -65,6 +65,15 @@
         <activity
             android:name="com.woncheol.yuljeon.PrefsFragment"
             android:label="설정" />
+        <activity
+            android:name="com.woncheol.yuljeon.Prefstechhelp"
+            android:label="도움주신 분" />
+        <activity
+            android:name="com.woncheol.yuljeon.Prefstester"
+            android:label="테스터들" />
+        <activity
+            android:name="com.woncheol.yuljeon.Prefsapplication"
+            android:label="이 앱에 대해" />
     </application>
 
 </manifest>
