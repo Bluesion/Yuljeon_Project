@@ -16,7 +16,6 @@ public class Tutorial extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-    	Utils.setAppTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#B3432B")));

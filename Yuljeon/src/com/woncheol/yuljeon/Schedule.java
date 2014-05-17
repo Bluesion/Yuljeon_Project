@@ -2,6 +2,7 @@ package com.woncheol.yuljeon;
 
 import java.lang.ref.WeakReference;
 import java.util.Calendar;
+
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
@@ -21,7 +22,12 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import com.tistory.whdghks913.croutonhelper.CroutonHelper;
+import com.woncheol.yuljeon.adapter.PreferenceData;
+import com.woncheol.yuljeon.adapter.ScheduleListViewAdapter;
+import com.woncheol.yuljeon.adapter.ScheduleListViewAdapter.ScheduleListData;
+
 import de.keyboardsurfer.android.widget.crouton.Style;
 
 @SuppressLint("HandlerLeak")
@@ -44,7 +50,6 @@ public class Schedule extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		Utils.setAppTheme(this);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_schedule);
 		getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#f4842d")));

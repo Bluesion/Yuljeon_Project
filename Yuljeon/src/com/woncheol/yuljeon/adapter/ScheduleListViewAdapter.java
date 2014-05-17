@@ -1,6 +1,9 @@
-package com.woncheol.yuljeon;
+package com.woncheol.yuljeon.adapter;
 
 import java.util.ArrayList;
+
+import com.woncheol.yuljeon.R;
+
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -18,7 +21,7 @@ class ScheduleViewHolder {
 	public TextView mText;
 }
 
-class ScheduleListViewAdapter extends BaseAdapter {
+public class ScheduleListViewAdapter extends BaseAdapter {
 	private Context mContext = null;
 	public ArrayList<ScheduleListData> mListData = new ArrayList<ScheduleListData>();
 
@@ -42,14 +45,20 @@ class ScheduleListViewAdapter extends BaseAdapter {
 
 		mListData.add(addInfo);
 	}
+	
+	public class ScheduleListData {
+
+		public String mDay;
+		public String mDayOfTheWeek;
+		public String mText;
+		public boolean isHoliday;
+
+		public int year, month, day;
+	}
 
 	public void clearData() {
 		mListData.clear();
 	}
-
-	// public void sort() {
-	// Collections.sort(mListData, ScheduleListData.ALPHA_COMPARATOR);
-	// }
 
 	@Override
 	public int getCount() {
@@ -109,26 +118,4 @@ class ScheduleListViewAdapter extends BaseAdapter {
 
 		return convertView;
 	}
-}
-
-class ScheduleListData {
-
-	public String mDay;
-	public String mDayOfTheWeek;
-	public String mText;
-	public boolean isHoliday;
-
-	public int year, month, day;
-
-	// public static final Comparator<ScheduleListData> ALPHA_COMPARATOR = new
-	// Comparator<ScheduleListData>() {
-	// private final Collator sCollator = Collator.getInstance();
-	//
-	// @Override
-	// public int compare(ScheduleListData mListDate_1, ScheduleListData
-	// mListDate_2) {
-	// return sCollator.compare(mListDate_1.mCalender,
-	// mListDate_2.mCalender);
-	// }
-	// };
 }

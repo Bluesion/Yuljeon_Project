@@ -1,6 +1,8 @@
-package com.woncheol.yuljeon;
+package com.woncheol.yuljeon.adapter;
 
 import java.util.ArrayList;
+
+import com.woncheol.yuljeon.R;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -19,13 +21,20 @@ class ViewHolder {
 	public TextView mListMediumText;
 }
 
-class ListViewAdapter extends BaseAdapter {
+public class ListViewAdapter extends BaseAdapter {
 	private Context mContext = null;
 	public ArrayList<ListData> mListData = new ArrayList<ListData>();
 
 	public ListViewAdapter(Context mContext) {
 		super();
 		this.mContext = mContext;
+	}
+	
+	public class ListData {
+
+		public Drawable mIcon;
+		public String mTitle;
+		public String mText;
 	}
 
 	public void addItem(Drawable icon, String mTitle, String mText) {
@@ -90,11 +99,4 @@ class ListViewAdapter extends BaseAdapter {
 
 		return convertView;
 	}
-}
-
-class ListData {
-
-	public Drawable mIcon;
-	public String mTitle;
-	public String mText;
 }

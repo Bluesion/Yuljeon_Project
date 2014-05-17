@@ -12,7 +12,7 @@
         <Preference
             android:title="앱 버전"
             android:key="version"
-            android:summary="BUILD_Rock_N_Roll_AVRIL_LAVIGNE" />
+            android:summary="BUILD_HTNGU_AVRIL_LAVIGNE" />
         
         </PreferenceCategory>
         

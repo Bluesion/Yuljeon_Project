@@ -4,6 +4,7 @@ Copyright (C) 2014 Woncheol Yang <dnjscjf098@gmail.com>
 
 율전중학교 애플리케이션은 다음과 같은 라이브러리를 필요로 합니다.
 
+- v4 Support Library (android-support-v4) 
 - v7 Appcompat Library (android-support-v7-appcompat)
 - Android Meal Library (http://whdghks913.tistory.com/486)
 - Jericho Library (http://whdghks913.tistory.com/486)

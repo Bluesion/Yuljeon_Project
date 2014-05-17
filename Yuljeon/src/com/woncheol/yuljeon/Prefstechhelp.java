@@ -11,7 +11,6 @@ public class Prefstechhelp extends PreferenceActivity {
 	@SuppressWarnings("deprecation")
 	@Override
     public void onCreate(Bundle savedInstanceState) {
-		Utils.setAppTheme(this);
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.pref_techhelp);
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)

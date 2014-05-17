@@ -1,38 +1,35 @@
-package com.woncheol.yuljeon;
+package com.woncheol.yuljeon.fragment;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-
 import com.tistory.whdghks913.croutonhelper.CroutonHelper;
-
+import com.woncheol.yuljeon.R;
+import com.woncheol.yuljeon.adapter.ListViewAdapter;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
-public class Call extends ActionBarActivity {
+public class Call extends Fragment {
 
 	private ListView mListView;
 	private ListViewAdapter mAdapter;
 
 	private CroutonHelper mHelper;
-
+	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		Utils.setAppTheme(this);
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_call);
-		getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#c74b46")));
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		setHasOptionsMenu(true);
+		View rootView = inflater.inflate(R.layout.activity_call, container, false);
+		
+		mListView = (ListView) rootView.findViewById(R.id.mContactsList);
 
-		mListView = (ListView) findViewById(R.id.mContactsList);
-
-		mAdapter = new ListViewAdapter(this);
+		mAdapter = new ListViewAdapter(getActivity());
 		mListView.setAdapter(mAdapter);
 
 		mListView.setOnItemClickListener(new OnItemClickListener() {
@@ -55,26 +52,24 @@ public class Call extends ActionBarActivity {
 		mAdapter.addItem(null, "행정실 2", "031-548-8107");
 		mAdapter.addItem(null, "행정실 3", "031-548-8108");
 
-		mHelper = new CroutonHelper(this);
+		mHelper = new CroutonHelper(getActivity());
 		mHelper.setText("전화 하고자 하는 번호를 터치하세요\n터치한다고 해서 바로 전화가 걸리지는 않습니다");
 		mHelper.setDuration(1500);
 		mHelper.setStyle(Style.INFO);
 		mHelper.show();
+		
+		return rootView;
+	}
+	
+	@Override
+	public void onStart() {
+		super.onStart();
 	}
 
 	@Override
-	protected void onPause() {
+	public void onPause() {
 		super.onPause();
 
 		mHelper.cencle(true);
 	}
-	
-	public boolean onOptionsItemSelected(android.view.MenuItem item) {
-		switch (item.getItemId()) {
-			case android.R.id.home:
-				finish();
-				return true;
-		}
-		return super.onOptionsItemSelected(item);
-	};
 }

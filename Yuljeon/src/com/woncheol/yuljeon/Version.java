@@ -9,7 +9,6 @@ public class Version extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		Utils.setAppTheme(this);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_version);
 		getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#D9C835")));

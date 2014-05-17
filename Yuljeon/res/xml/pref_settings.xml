@@ -4,14 +4,6 @@
     <PreferenceCategory
             android:title="일반 설정">
         
-        <ListPreference
-            android:title="테마 변경"
-            android:summary="테마를 변경 후 앱을 다시 시작해주세요"
-            android:key="theme"
-            android:defaultValue="0"
-            android:entries="@array/theme_entries"
-            android:entryValues="@array/theme_values" />
-        
         <Preference
             android:title="튜토리얼 다시 보기"
             android:key="tutorial"

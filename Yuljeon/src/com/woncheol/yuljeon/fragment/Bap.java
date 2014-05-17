@@ -1,4 +1,4 @@
-package com.woncheol.yuljeon;
+package com.woncheol.yuljeon.fragment;
 
 import java.lang.ref.WeakReference;
 import toast.library.meal.MealLibrary;
@@ -7,63 +7,54 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
-import com.tistory.whdghks913.croutonhelper.CroutonHelper;
-import de.keyboardsurfer.android.widget.crouton.Style;
+import com.woncheol.yuljeon.About;
+import com.woncheol.yuljeon.R;
+import com.woncheol.yuljeon.adapter.BapListViewAdapter;
 
 @SuppressLint("HandlerLeak")
-public class Bap extends ActionBarActivity {
+public class Bap extends Fragment {
 
 	private BapListViewAdapter mAdapter;
-	private ListView mListView;
+	public static ListView mListView;
 	private Handler mHandler;
 
 	private String[] calender, morning, lunch, night;
-
-	private CroutonHelper mHelper;
 
 	private SharedPreferences bapList;
 	private SharedPreferences.Editor bapListeditor;
 
 	private ProgressDialog mDialog;
 
-	private final String savedList = "저장된 정보를 불러왔습니다\n과거 정보일경우 새로고침 해주세요";
 	private final String noMessage = "네트워크 연결 상태가 좋지 않아 정보를 불러오지 못했습니다";
 	private final String loadingList = "급식 정보를 받아오고 있습니다...";
-	private final String loadList = "인터넷에서 급식 정보를 받아왔습니다";
-	private final String Syncing = "지금 로딩중입니다";
 
 	private boolean isSync = false;
-
+	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		Utils.setAppTheme(this);
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_bap);
-		getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#AA66CC")));
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-		mListView = (ListView) findViewById(R.id.mBapList);
-
-		mAdapter = new BapListViewAdapter(this);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		setHasOptionsMenu(true);
+		View rootView = inflater.inflate(R.layout.activity_bap, container, false);
+		
+		mListView = (ListView) rootView.findViewById(R.id.mBapList);
+		mAdapter = new BapListViewAdapter(getActivity());
 		mListView.setAdapter(mAdapter);
 
-		bapList = getSharedPreferences("bapList", 0);
+		bapList = getActivity().getSharedPreferences("bapList", 0);
 		bapListeditor = bapList.edit();
 
 		mHandler = new MyHandler(this);
-
-		mHelper = new CroutonHelper(this);
 
 		if (bapList.getBoolean("checker", false)) {
 			calender = restore("calender");
@@ -72,11 +63,6 @@ public class Bap extends ActionBarActivity {
 			night = restore("night");
 
 			mHandler.sendEmptyMessage(1);
-
-			mHelper.setText(savedList);
-			mHelper.setDuration(1500);
-			mHelper.setStyle(Style.CONFIRM);
-			mHelper.show();
 		} else {
 			if (isNetwork()) {
 				calender = new String[7];
@@ -87,14 +73,14 @@ public class Bap extends ActionBarActivity {
 				sync();
 			} else {
 				addErrorList();
-
-				mHelper.setText(noMessage);
-				mHelper.setDuration(1500);
-				mHelper.setStyle(Style.ALERT);
-				mHelper.setAutoTouchCencle(true);
-				mHelper.show();
 			}
 		}
+		return rootView;
+	}
+	
+	@Override
+	public void onStart() {
+		super.onStart();
 	}
 
 	private void sync() {
@@ -120,24 +106,12 @@ public class Bap extends ActionBarActivity {
 					save("night", night);
 
 					mHandler.sendEmptyMessage(1);
-
-					mHelper.setText(loadList);
-					mHelper.setDuration(1500);
-					mHelper.setStyle(Style.CONFIRM);
-					mHelper.setAutoTouchCencle(true);
-					mHelper.show();
 				} catch (Exception ex) {
 					ex.printStackTrace();
 
 					mAdapter.clearData();
 
 					addErrorList();
-
-					mHelper.setText(noMessage);
-					mHelper.setDuration(1500);
-					mHelper.setStyle(Style.ALERT);
-					mHelper.setAutoTouchCencle(true);
-					mHelper.show();
 				}
 				mHandler.sendEmptyMessage(2);
 				isSync = false;
@@ -183,7 +157,7 @@ public class Bap extends ActionBarActivity {
 	}
 
 	private boolean isNetwork() {
-		ConnectivityManager manager = (ConnectivityManager) this
+		ConnectivityManager manager = (ConnectivityManager) getActivity()
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo mobile = manager
 				.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
@@ -199,13 +173,11 @@ public class Bap extends ActionBarActivity {
 	private void addErrorList() {
 		mAdapter.addItem("알수 없음", "알수 없음", noMessage, noMessage, noMessage);
 	}
-
+	
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.bap, menu);
-
-		return super.onCreateOptionsMenu(menu);
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+	    inflater.inflate(R.menu.bap, menu);
+	    super.onCreateOptionsMenu(menu,inflater);
 	}
 
 	@Override
@@ -218,46 +190,26 @@ public class Bap extends ActionBarActivity {
 					sync();
 					item.setEnabled(false);
 				} else {
-					mHelper.clearCroutonsForActivity();
-					mHelper.setText(Syncing);
-					mHelper.setDuration(1500);
-					mHelper.setStyle(Style.INFO);
-					mHelper.setAutoTouchCencle(true);
-					mHelper.show();
 				}
 			} else {
 				addErrorList();
-
-				mHelper.clearCroutonsForActivity();
-				mHelper.setText(noMessage);
-				mHelper.setDuration(1500);
-				mHelper.setStyle(Style.ALERT);
-				mHelper.setAutoTouchCencle(true);
-				mHelper.show();
 			}
 		}
 		
 		if (ItemId == R.id.about) {
-			startActivity(new Intent(Bap.this, About.class));
+			Intent i = new Intent(getActivity(), About.class);
+			startActivity(i);
 		}
-		
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			finish();
-			return true;
-	}
 
 		return super.onOptionsItemSelected(item);
 	}
 
 	@Override
-	protected void onPause() {
+	public void onPause() {
 		super.onPause();
 
 		if (mDialog != null)
 			mDialog.dismiss();
-
-		mHelper.cencle(true);
 	}
 
 	private class MyHandler extends Handler {
@@ -275,7 +227,7 @@ public class Bap extends ActionBarActivity {
 				if (msg.what == 0) {
 					if (mDialog == null) {
 						mDialog = ProgressDialog
-								.show(Bap.this, "", loadingList);
+								.show(getActivity(), "", loadingList);
 					}
 				} else if (msg.what == 1) {
 					for (int i = 0; i < 7; i++) {

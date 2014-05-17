@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.woncheol.yuljeon"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="2"
+    android:versionName="2.0" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -10,7 +10,7 @@
     
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
 
     <application
         android:allowBackup="true"
@@ -34,28 +34,13 @@
         </activity>
         <activity
             android:name="com.woncheol.yuljeon.Tutorial"
-            android:label="튜토리얼" />
-        <activity
-            android:name="com.woncheol.yuljeon.Bap"
-            android:label="식단" />
-        <activity
-            android:name="com.woncheol.yuljeon.Call"
-            android:label="연락처" />
-        <activity
-            android:name="com.woncheol.yuljeon.Schedule"
-            android:label="일정" />
-        <activity
-            android:name="com.woncheol.yuljeon.Webview"
-            android:label="홈페이지" />
+            android:label="튜토리얼"/>
         <activity
             android:name="com.woncheol.yuljeon.About"
             android:label="식단" />
         <activity
             android:name="com.woncheol.yuljeon.TutorialWebview"
             android:label="도움말" />
-        <activity
-            android:name="com.woncheol.yuljeon.Haksaeng"
-            android:label="학생부 소식" />
         <activity
             android:name="com.woncheol.yuljeon.Builder"
             android:label="히든메뉴" />
@@ -74,6 +59,8 @@
         <activity
             android:name="com.woncheol.yuljeon.Prefsapplication"
             android:label="이 앱에 대해" />
+        <activity
+            android:name="com.woncheol.yuljeon.Schedule"
+            android:label="율전중 일정" />
     </application>
-
 </manifest>

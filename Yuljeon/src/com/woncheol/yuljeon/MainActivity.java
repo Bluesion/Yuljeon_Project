@@ -2,61 +2,89 @@ package com.woncheol.yuljeon;
 
 import java.util.Timer;
 import java.util.TimerTask;
-import com.tistory.whdghks913.croutonhelper.CroutonHelper;
-import de.keyboardsurfer.android.widget.crouton.Style;
+import com.github.amlcurran.showcaseview.ShowcaseView;
+import com.github.amlcurran.showcaseview.targets.ActionViewTarget;
+import com.woncheol.yuljeon.fragment.Bap;
+import com.woncheol.yuljeon.fragment.Call;
+import com.woncheol.yuljeon.fragment.Haksaeng;
+import com.woncheol.yuljeon.fragment.CheckSchedule;
+import com.woncheol.yuljeon.fragment.Main;
+import com.woncheol.yuljeon.fragment.Webview;
 import android.app.Activity;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.app.SearchManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
-
+ 
 public class MainActivity extends ActionBarActivity {
-
-	private ListView mListView;
-	private ListViewAdapter mAdapter;
-
-	private CroutonHelper mHelper;
 	
-	boolean btBackState = false;
-    Timer timer = new Timer();
+	private DrawerLayout			mDrawerLayout;
+	private ListView				mDrawerList;
+	private ActionBarDrawerToggle	mDrawerToggle;
+
+	private CharSequence			mDrawerTitle;
+	private CharSequence			mTitle;
+	private String[]				mPlanetTitles;
     
-    long backPressedTime;
+    boolean btBackState = false;
+    Timer timer = new Timer();
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		Utils.setAppTheme(this);
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#666666")));
-
-		mListView = (ListView) findViewById(R.id.mList);
-
-		mAdapter = new ListViewAdapter(this);
-		mListView.setAdapter(mAdapter);
-
-		mAdapter.addItem(getResources().getDrawable(R.drawable.bap), "Ωƒ¥‹",
-				"ø¿¥√ ≥™ø¿¥¬ ±ﬁΩƒ¿ª »Æ¿Œ«“ ºˆ ¿÷Ω¿¥œ¥Ÿ");
-		mAdapter.addItem(getResources().getDrawable(R.drawable.calendar), "¿œ¡§",
-				"«–±≥¿« ¿œ¡§¿ª »Æ¿Œ«“ ºˆ ¿÷Ω¿¥œ¥Ÿ");
-		mAdapter.addItem(getResources().getDrawable(R.drawable.call), "ø¨∂Ù√≥",
-				"«–±≥∑Œ ¿¸»≠∏¶ «“ ºˆ ¿÷Ω¿¥œ¥Ÿ");
-		mAdapter.addItem(getResources().getDrawable(R.drawable.browser), "«–±≥ »®∆‰¿Ã¡ˆ",
-				"«–±≥ »®∆‰¿Ã¡ˆ∏¶ πÊπÆ«’¥œ¥Ÿ");
-		mAdapter.addItem(getResources().getDrawable(R.drawable.haksaeng), "«–ª˝∫Œ º“Ωƒ",
-				"«–ª˝∫Œ¿« º“Ωƒ¿ª µÈæÓ∫∏ººø‰");
-		mAdapter.addItem(getResources().getDrawable(R.drawable.settings), "º≥¡§",
-				"¿Ã æ€ø° ¥Î«— ¿⁄ºº«— ¡§∫∏∏¶ æÀ ºˆ ¿÷Ω¿¥œ¥Ÿ");
-		
+	long backPressedTime;
+    
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+ 
+        mTitle = mDrawerTitle = getTitle();
+		mPlanetTitles = getResources().getStringArray(R.array.nav_drawer_items);
+		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+		mDrawerList = (ListView) findViewById(R.id.list_slidermenu);
+		mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+		mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, mPlanetTitles));
+		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 		SharedPreferences pref = getSharedPreferences("pref", Activity.MODE_PRIVATE);
+
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setHomeButtonEnabled(true);
+
+		mDrawerToggle = new ActionBarDrawerToggle(this,
+		mDrawerLayout,
+		R.drawable.ic_drawer,
+		R.string.app_name,
+		R.string.app_name
+		)
+		{
+			public void onDrawerClosed(View view) {
+				getSupportActionBar().setTitle(mTitle);
+			}
+
+			public void onDrawerOpened(View drawerView) {
+				getSupportActionBar().setTitle(mDrawerTitle);
+			}
+		};
 		
-		Boolean firstrun = pref.getBoolean("firstrun", true);
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+ 
+        if (savedInstanceState == null) {
+            displayView(0);
+        }
+        
+        Boolean firstrun = pref.getBoolean("firstrun", true);
         if (firstrun) {
             Intent guide = new Intent(MainActivity.this, Tutorial.class);
             startActivity(guide);
@@ -66,44 +94,116 @@ public class MainActivity extends ActionBarActivity {
         }
         else{
         }
+        
+        Boolean view = pref.getBoolean("view", true);
+        if (view) {
+        	new ShowcaseView.Builder(this)
+            .setTarget(new ActionViewTarget(this, ActionViewTarget.Type.HOME))
+            .setContentTitle("ÏïàÎÖïÌïòÏÑ∏Ïöî!")
+            .setContentText("Ïï± ÏïÑÏù¥ÏΩòÏùÑ ÎàÑÎ•¥Í±∞ÎÇò ÌôîÎ©¥Ïùò ÏôºÏ™ΩÏóêÏÑú Ïò§Î•∏Ï™ΩÏúºÎ°ú Ïä§ÏôÄÏù¥ÌîÑÌïòÎ©¥ Ïú®Ï†ÑÏ§ëÌïôÍµê Ïï±Ïùò Îã§ÏñëÌïú Í∏∞Îä•ÏùÑ ÎßåÎÇòÏã§ Ïàò ÏûàÏäµÎãàÎã§")
+            .setStyle(R.style.CustomShowcaseTheme)
+            .hideOnTouchOutside()
+            .build();
+        	SharedPreferences.Editor editor = pref.edit();
+            editor.putBoolean("view", false);
+            editor.commit();
+        }
+        else{
+        }
+    }
 
-		mListView.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> parent, View v,
-					int position, long id) {
-
-				if (position == 0) {
-					startActivity(new Intent(MainActivity.this,
-							Bap.class));
-				} else if (position == 1) {
-					startActivity(new Intent(MainActivity.this, Schedule.class));
-				} else if (position == 2) {
-					startActivity(new Intent(MainActivity.this, Call.class));
-				} else if (position == 3) {
-					startActivity(new Intent(MainActivity.this, Webview.class));
-				} else if (position == 4) {
-					startActivity(new Intent(MainActivity.this, Haksaeng.class));
-				} else if (position == 5) {
-					startActivity(new Intent(MainActivity.this, PrefsFragment.class));
-				}
-			}
-		});
-
-		mHelper = new CroutonHelper(this);
-		mHelper.setText("»Øøµ«’¥œ¥Ÿ~!");
-		mHelper.setDuration(1500);
-		mHelper.setStyle(Style.INFO);
-		mHelper.show();
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+		{
+			displayView(position);
+		}
 	}
-
-	@Override
-	protected void onPause() {
-		super.onPause();
-		mHelper.cencle(true);
-	}
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
 	
-	public void onBackPressed() {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        switch(item.getItemId()) {
+        case R.id.action_settings:
+        	Intent i = new Intent(MainActivity.this, PrefsFragment.class);
+        	startActivity(i);
+            Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
+            intent.putExtra(SearchManager.QUERY, getSupportActionBar().getTitle());
+   		return false;
+   	}
+		return false;
+    }
+ 
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
+        menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
+        return super.onPrepareOptionsMenu(menu);
+    }
+ 
+    private void displayView(int position) {
+		Fragment fragment = null;
+        switch (position) {
+        case 0:
+            fragment = new Main();
+            break;
+        case 1:
+        	fragment = new Bap();
+            break;
+        case 2:
+            fragment = new CheckSchedule();
+            break;
+        case 3:
+            fragment = new Call();
+            break;
+        case 4:
+            fragment = new Haksaeng();
+            break;
+        case 5:
+            fragment = new Webview();
+            break;
+ 
+        default:
+            break;
+        }
+        
+        if (fragment != null) {
+		FragmentManager fragmentManager = getSupportFragmentManager();
+		fragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit();
+
+            mDrawerList.setItemChecked(position, true);
+            setTitle(mPlanetTitles[position]);
+    		mDrawerLayout.closeDrawer(mDrawerList);
+        }
+    }
+ 
+    @Override
+    public void setTitle(CharSequence title) {
+        mTitle = title;
+        getSupportActionBar().setTitle(mTitle);
+    }
+ 
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mDrawerToggle.syncState();
+    }
+ 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+    
+    public void onBackPressed() {
     	if(btBackState == false) {
             timer.schedule(new TimerTask() {
             	

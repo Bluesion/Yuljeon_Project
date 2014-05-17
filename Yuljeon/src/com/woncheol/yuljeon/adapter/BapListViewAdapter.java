@@ -1,12 +1,21 @@
-package com.woncheol.yuljeon;
+package com.woncheol.yuljeon.adapter;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
+
+import com.woncheol.yuljeon.R;
+import com.woncheol.yuljeon.fragment.Bap;
+
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 class BapViewHolder {
@@ -21,9 +30,10 @@ class BapViewHolder {
 	public TextView mCalender;
 }
 
-class BapListViewAdapter extends BaseAdapter {
+public class BapListViewAdapter extends BaseAdapter {
 	private Context mContext = null;
 	private ArrayList<BapListData> mListData = new ArrayList<BapListData>();
+	private Calendar currentTime = Calendar.getInstance();
 
 	public BapListViewAdapter(Context mContext) {
 		super();
@@ -98,15 +108,49 @@ class BapListViewAdapter extends BaseAdapter {
 			holder.mDate.setTextColor(Color.BLACK);
 		}
 
-		holder.mCalender.setText(mData.mCalender);
+		String Calender = mData.mCalender;
+		holder.mCalender.setText(Calender);
 		holder.mDate.setText(mDate);
+
+		SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy.MM.dd(E)",
+				Locale.KOREA);
+
+		try {
+			Calendar Date = Calendar.getInstance();
+			Date.setTime(sdFormat.parse(Calender));
+
+			LinearLayout bapListLayout = (LinearLayout) convertView
+					.findViewById(R.id.bapListLayout);
+
+			if (Date.get(Calendar.YEAR) == currentTime.get(Calendar.YEAR)
+					&& Date.get(Calendar.MONTH) == currentTime
+							.get(Calendar.MONTH)
+					&& Date.get(Calendar.DAY_OF_MONTH) == currentTime
+							.get(Calendar.DAY_OF_MONTH)) {
+
+				bapListLayout.setBackgroundColor(mContext.getResources()
+						.getColor(R.color.background));
+
+				if (position == 0)
+					Bap.mListView.setSelection(position);
+				else
+					Bap.mListView.setSelection(position - 1);
+
+			} else {
+				bapListLayout.setBackgroundColor(mContext.getResources()
+						.getColor(android.R.color.transparent));
+			}
+
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 
 		String mMorning = mData.mMorning;
 		String mLunch = mData.mLunch;
 		String mNight = mData.mNight;
 
 		if (MealCheck(mMorning))
-			holder.mMorning.setText("아침이 없습니다");
+			holder.mMorning.setText("");
 		else
 			holder.mMorning.setText(mMorning.trim());
 
@@ -116,7 +160,7 @@ class BapListViewAdapter extends BaseAdapter {
 			holder.mLunch.setText(mLunch.trim());
 
 		if (MealCheck(mNight))
-			holder.mNight.setText("저녁이 없습니다 : 야자가 없습니다!");
+			holder.mNight.setText("");
 		else
 			holder.mNight.setText(mNight.trim());
 
@@ -131,7 +175,6 @@ class BapListViewAdapter extends BaseAdapter {
 }
 
 class BapListData {
-
 	public String mCalender;
 	public String mDate;
 

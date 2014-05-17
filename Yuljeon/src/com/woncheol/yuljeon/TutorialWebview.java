@@ -16,7 +16,6 @@ public class TutorialWebview extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-    	Utils.setAppTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial_webview);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3f9fe0")));
