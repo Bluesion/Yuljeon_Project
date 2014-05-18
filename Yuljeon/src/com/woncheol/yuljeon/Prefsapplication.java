@@ -1,8 +1,6 @@
 package com.woncheol.yuljeon;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,8 +16,6 @@ public class Prefsapplication extends PreferenceActivity {
         addPreferencesFromResource(R.xml.pref_application);
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
             getActionBar().setDisplayHomeAsUpEnabled(true);
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-            getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#B3432B")));
         
         Preference ilove = (Preference) findPreference("singo");
         ilove.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -76,6 +72,24 @@ public class Prefsapplication extends PreferenceActivity {
     	    @Override
     	    public boolean onPreferenceClick(Preference preference) {
     	    	startActivity(new Intent(Prefsapplication.this, Prefstester.class));
+    	        return true;
+    	    }
+    	});
+    	
+    	Preference love = (Preference) findPreference("license");
+    	love.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+    	    @Override
+    	    public boolean onPreferenceClick(Preference preference) {
+    	    	startActivity(new Intent(Prefsapplication.this, License.class));
+    	        return true;
+    	    }
+    	});
+    	
+    	Preference forever = (Preference) findPreference("changelog");
+    	forever.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+    	    @Override
+    	    public boolean onPreferenceClick(Preference preference) {
+    	    	startActivity(new Intent(Prefsapplication.this, Changelog.class));
     	        return true;
     	    }
     	});

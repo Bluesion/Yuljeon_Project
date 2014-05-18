@@ -10,11 +10,11 @@
         
         <Preference
             android:title="한영빈 (sukso96100) 님"
-            android:summary="튜토리얼 감사해요!" />
+            android:summary="튜토리얼 관련 파일 감사합니다~" />
         
         <Preference
             android:title="미르 (whdghks913) 님"
-            android:summary="앱의 처음부터 끝까지 도움 주셔서 감사합니다 :)" />
+            android:summary="급식 파싱과 Crouton Helper 라이브러리, 급식/일정/연락처 리스트뷰 관련 파일 감사합니다!" />
         
         <Preference
             android:title="이온 (kjhw_1025) 님"

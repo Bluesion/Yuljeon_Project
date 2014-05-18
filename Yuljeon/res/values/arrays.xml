@@ -6,8 +6,9 @@
         <item >율전중 식단</item>
         <item >율전중 일정</item>
         <item >율전중 연락처</item>
-        <item >학생부 소식</item>
         <item >율전중 홈페이지</item>
+        <item >학생부 소식</item>
+        <item >설정</item>
     </string-array>
     
 </resources>

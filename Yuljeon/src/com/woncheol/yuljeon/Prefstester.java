@@ -1,7 +1,5 @@
 package com.woncheol.yuljeon;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
@@ -15,8 +13,6 @@ public class Prefstester extends PreferenceActivity {
         addPreferencesFromResource(R.xml.pref_tester);
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
             getActionBar().setDisplayHomeAsUpEnabled(true);
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-            getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
 	}
     
     public boolean onOptionsItemSelected(android.view.MenuItem item) {

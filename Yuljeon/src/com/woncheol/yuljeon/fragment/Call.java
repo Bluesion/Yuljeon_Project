@@ -24,7 +24,6 @@ public class Call extends Fragment {
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		setHasOptionsMenu(true);
 		View rootView = inflater.inflate(R.layout.activity_call, container, false);
 		
 		mListView = (ListView) rootView.findViewById(R.id.mContactsList);

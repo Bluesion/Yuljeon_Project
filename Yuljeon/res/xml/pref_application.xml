@@ -12,7 +12,7 @@
         <Preference
             android:title="앱 버전"
             android:key="version"
-            android:summary="BUILD_HTNGU_AVRIL_LAVIGNE" />
+            android:summary="BUILD_17_AVRIL_LAVIGNE" />
         
         </PreferenceCategory>
         
@@ -43,6 +43,14 @@
             android:key="singo"
             android:title="제작자에게 메일 보내기"
             android:summary="메일 앱이 디바이스에 설치되어 있어야 합니다" />
+        
+        <Preference
+            android:key="changelog"
+            android:title="체인지 로그" />
+        
+        <Preference
+            android:key="license"
+            android:title="라이센스" />
         
         </PreferenceCategory>
         

@@ -15,7 +15,6 @@ public class CheckSchedule extends Fragment {
     
     @Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		setHasOptionsMenu(true);
 		View rootView = inflater.inflate(R.layout.activity_check_schedule, container, false);
 		
 		Button a = (Button)rootView.findViewById(R.id.button1);
@@ -23,7 +22,7 @@ public class CheckSchedule extends Fragment {
 		     public void onClick(View v) {
 		        Intent intent = new Intent(getActivity(), Schedule.class);
 		        startActivity(intent);
-		     } 
+		     }
 		});
 
 		return rootView;

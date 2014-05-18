@@ -13,7 +13,6 @@ import com.woncheol.yuljeon.fragment.Webview;
 import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.app.SearchManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -102,7 +101,6 @@ public class MainActivity extends ActionBarActivity {
             .setContentTitle("안녕하세요!")
             .setContentText("앱 아이콘을 누르거나 화면의 왼쪽에서 오른쪽으로 스와이프하면 율전중학교 앱의 다양한 기능을 만나실 수 있습니다")
             .setStyle(R.style.CustomShowcaseTheme)
-            .hideOnTouchOutside()
             .build();
         	SharedPreferences.Editor editor = pref.edit();
             editor.putBoolean("view", false);
@@ -111,41 +109,17 @@ public class MainActivity extends ActionBarActivity {
         else{
         }
     }
-
-    private class DrawerItemClickListener implements ListView.OnItemClickListener {
-		@Override
-		public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-		{
-			displayView(position);
-		}
-	}
-    
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
 	
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-        switch(item.getItemId()) {
-        case R.id.action_settings:
-        	Intent i = new Intent(MainActivity.this, PrefsFragment.class);
-        	startActivity(i);
-            Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
-            intent.putExtra(SearchManager.QUERY, getSupportActionBar().getTitle());
-   		return false;
-   	}
 		return false;
     }
  
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-        menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
         return super.onPrepareOptionsMenu(menu);
     }
  
@@ -165,10 +139,13 @@ public class MainActivity extends ActionBarActivity {
             fragment = new Call();
             break;
         case 4:
-            fragment = new Haksaeng();
+            fragment = new Webview();
             break;
         case 5:
-            fragment = new Webview();
+            fragment = new Haksaeng();
+            break;
+        case 6:
+            fragment = new PrefsFragment();
             break;
  
         default:
@@ -237,4 +214,13 @@ public class MainActivity extends ActionBarActivity {
         super.onDestroy();
         clearApplicationCache(null);
     }
+    
+private class DrawerItemClickListener implements ListView.OnItemClickListener {
+    	
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+		{
+			displayView(position);
+		}
+	}
 }

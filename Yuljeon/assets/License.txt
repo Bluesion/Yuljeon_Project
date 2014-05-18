@@ -1,8 +1,8 @@
-Yuljeon Middle School Application for Android
+ï»¿Yuljeon Middle School Application for Android
 Copyright (C) 2014 Woncheol Yang <dnjscjf098@gmail.com>
 ====================
 
-À²ÀüÁßÇĞ±³ ¾ÖÇÃ¸®ÄÉÀÌ¼ÇÀº ´ÙÀ½°ú °°Àº ¶óÀÌºê·¯¸®¸¦ ÇÊ¿ä·Î ÇÕ´Ï´Ù.
+ìœ¨ì „ì¤‘í•™êµ ì• í”Œë¦¬ì¼€ì´ì…˜ì€ ë‹¤ìŒê³¼ ê°™ì€ ë¼ì´ë¸ŒëŸ¬ë¦¬ë¥¼ í•„ìš”ë¡œ í•©ë‹ˆë‹¤.
 
 - v4 Support Library (android-support-v4) 
 - v7 Appcompat Library (android-support-v7-appcompat)
@@ -34,7 +34,7 @@ http://www.gnu.org/licenses/gpl-3.0-standalone.html
 
 ====================
 
-Á¦ 3ÀÚ °íÁö»çÇ×
+ì œ 3ì ê³ ì§€ì‚¬í•­
 
 Yuljeon Middle School Application for Android : Third Party Notices
 
@@ -435,7 +435,7 @@ This software includes following software components, which were obtained under 
 
 Crouton Helper
 ----------
-Copyright (c) Benjamin Weiss & ¹Ì¸£ (whdghks913)
+Copyright (c) Benjamin Weiss & ë¯¸ë¥´ (whdghks913)
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -476,7 +476,7 @@ This software includes following software components, which were obtained under 
 
 Android Meal Library
 ----------
-Copyright (c) Toast & ¹Ì¸£ (whdghks913)
+Copyright (c) Toast & ë¯¸ë¥´ (whdghks913)
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -496,7 +496,7 @@ This software includes following software components, which were obtained under 
 
 ShowcaseView
 ----------
-Copyright Alex Curran (+Alex) ¨Ï 2012. All rights reserved.
+Copyright Alex Curran (+Alex) â“’ 2012. All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

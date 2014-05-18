@@ -1,7 +1,5 @@
 package com.woncheol.yuljeon;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 
@@ -11,7 +9,6 @@ public class Version extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_version);
-		getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#D9C835")));
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 	
