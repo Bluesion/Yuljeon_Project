@@ -14,7 +14,7 @@
         
         <Preference
             android:title="미르 (whdghks913) 님"
-            android:summary="급식 파싱과 Crouton Helper 라이브러리, 급식/일정/연락처 리스트뷰 관련 파일 감사합니다!" />
+            android:summary="급식 파싱과 Crouton Helper 라이브러리, 급식/연락처 리스트뷰 관련 파일 감사합니다!" />
         
         <Preference
             android:title="이온 (kjhw_1025) 님"

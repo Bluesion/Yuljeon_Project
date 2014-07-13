@@ -1,6 +1,8 @@
 package com.woncheol.yuljeon;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
@@ -15,7 +17,8 @@ public class Tutorial extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tutorial);
+        setContentView(R.layout.tutorial);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#f4842d")));
 
         mPager = (ViewPager)findViewById(R.id.pager);
         mPager.setAdapter(new PagerAdapterClass(getApplicationContext()));

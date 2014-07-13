@@ -5,7 +5,7 @@
 
 [BUILD_HTNGU_AVRIL_LAVIGNE]
 
-- Navigation Drawer 형식의 UI 사용
+- Navigation Drawer UI 사용
 - ShowcaseView 라이브러리 사용
 - 급식 하이라이트 기능 추가
 - 테마 선택 기능 삭제
@@ -20,3 +20,10 @@
 - 액션바 색상 삭제
 - ShowcaseView 버그 수정
 - 불필요 찌꺼기 삭제
+
+
+[BUILD_Bitchin'_Summer_AVRIL_LAVIGNE]
+
+- 율전중학교 일정 리스트뷰 변경
+- ShowcaseView 기능 삭제
+- 그 외 소스 수정

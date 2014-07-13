@@ -2,13 +2,11 @@ package com.woncheol.yuljeon;
 
 import java.util.Timer;
 import java.util.TimerTask;
-import com.github.amlcurran.showcaseview.ShowcaseView;
-import com.github.amlcurran.showcaseview.targets.ActionViewTarget;
 import com.woncheol.yuljeon.fragment.Bap;
 import com.woncheol.yuljeon.fragment.Call;
 import com.woncheol.yuljeon.fragment.Haksaeng;
-import com.woncheol.yuljeon.fragment.CheckSchedule;
 import com.woncheol.yuljeon.fragment.Main;
+import com.woncheol.yuljeon.fragment.Schedule;
 import com.woncheol.yuljeon.fragment.Webview;
 import android.app.Activity;
 import android.support.v4.app.Fragment;
@@ -16,6 +14,8 @@ import android.support.v4.app.FragmentManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
@@ -47,7 +47,8 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.drawer);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#666666")));
  
         mTitle = mDrawerTitle = getTitle();
 		mPlanetTitles = getResources().getStringArray(R.array.nav_drawer_items);
@@ -93,21 +94,6 @@ public class MainActivity extends ActionBarActivity {
         }
         else{
         }
-        
-        Boolean view = pref.getBoolean("view", true);
-        if (view) {
-        	new ShowcaseView.Builder(this)
-            .setTarget(new ActionViewTarget(this, ActionViewTarget.Type.HOME))
-            .setContentTitle("안녕하세요!")
-            .setContentText("앱 아이콘을 누르거나 화면의 왼쪽에서 오른쪽으로 스와이프하면 율전중학교 앱의 다양한 기능을 만나실 수 있습니다")
-            .setStyle(R.style.CustomShowcaseTheme)
-            .build();
-        	SharedPreferences.Editor editor = pref.edit();
-            editor.putBoolean("view", false);
-            editor.commit();
-        }
-        else{
-        }
     }
 	
     @Override
@@ -133,7 +119,7 @@ public class MainActivity extends ActionBarActivity {
         	fragment = new Bap();
             break;
         case 2:
-            fragment = new CheckSchedule();
+            fragment = new Schedule();
             break;
         case 3:
             fragment = new Call();

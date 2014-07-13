@@ -2,6 +2,7 @@ package com.woncheol.yuljeon.fragment;
 
 import com.woncheol.yuljeon.R;
 import com.woncheol.yuljeon.TutorialWebview;
+
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -27,7 +28,7 @@ public class Webview extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		setHasOptionsMenu(true);
-		View rootView = inflater.inflate(R.layout.webview, container, false);
+		View rootView = inflater.inflate(R.layout.fragment_webview, container, false);
 
 		webView = (WebView) rootView.findViewById(R.id.webview);
 		progressBar = (ProgressBar) rootView.findViewById(R.id.progressBar1);

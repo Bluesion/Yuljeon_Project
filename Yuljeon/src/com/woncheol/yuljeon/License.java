@@ -2,7 +2,10 @@ package com.woncheol.yuljeon;
 
 import java.io.IOException;
 import java.io.InputStream;
+
 import android.content.res.AssetManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.TextView;
@@ -12,7 +15,8 @@ public class License extends ActionBarActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.license);
+        setContentView(R.layout.activity_license);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#437299")));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
  
         TextView txtContent = (TextView) findViewById(R.id.txtContent);

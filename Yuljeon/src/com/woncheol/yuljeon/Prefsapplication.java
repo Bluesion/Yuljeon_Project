@@ -17,8 +17,8 @@ public class Prefsapplication extends PreferenceActivity {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
             getActionBar().setDisplayHomeAsUpEnabled(true);
         
-        Preference ilove = (Preference) findPreference("singo");
-        ilove.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+        Preference a = (Preference) findPreference("singo");
+        a.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
     	    @Override
     	    public boolean onPreferenceClick(Preference arg0) {
     	    	Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
@@ -29,8 +29,8 @@ public class Prefsapplication extends PreferenceActivity {
     	    }
     	});
     	
-    	Preference a = (Preference) findPreference("Opensource");
-    	a.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+    	Preference v = (Preference) findPreference("Opensource");
+    	v.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
     	    @Override
     	    public boolean onPreferenceClick(Preference preference) {
     	        Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -40,8 +40,8 @@ public class Prefsapplication extends PreferenceActivity {
     	    }
     	});
         
-        Preference v = (Preference) findPreference("builder");
-    	v.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+        Preference r = (Preference) findPreference("builder");
+    	r.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
     	    @Override
     	    public boolean onPreferenceClick(Preference preference) {
     	    	startActivity(new Intent(Prefsapplication.this, Builder.class));
@@ -49,8 +49,8 @@ public class Prefsapplication extends PreferenceActivity {
     	    }
     	});
     	
-    	Preference r = (Preference) findPreference("version");
-    	r.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+    	Preference i = (Preference) findPreference("version");
+    	i.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
     	    @Override
     	    public boolean onPreferenceClick(Preference preference) {
     	    	startActivity(new Intent(Prefsapplication.this, Version.class));
@@ -58,20 +58,11 @@ public class Prefsapplication extends PreferenceActivity {
     	    }
     	});
     	
-    	Preference i = (Preference) findPreference("techhelp");
-    	i.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-    	    @Override
-    	    public boolean onPreferenceClick(Preference preference) {
-    	    	startActivity(new Intent(Prefsapplication.this, Prefstechhelp.class));
-    	        return true;
-    	    }
-    	});
-    	
-    	Preference l = (Preference) findPreference("tester");
+    	Preference l = (Preference) findPreference("techhelp");
     	l.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
     	    @Override
     	    public boolean onPreferenceClick(Preference preference) {
-    	    	startActivity(new Intent(Prefsapplication.this, Prefstester.class));
+    	    	startActivity(new Intent(Prefsapplication.this, Prefstechhelp.class));
     	        return true;
     	    }
     	});
