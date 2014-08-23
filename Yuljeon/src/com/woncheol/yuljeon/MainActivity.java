@@ -14,13 +14,12 @@ import android.support.v4.app.FragmentManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -46,9 +45,9 @@ public class MainActivity extends ActionBarActivity {
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+    	Util.setAppTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawer);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#666666")));
  
         mTitle = mDrawerTitle = getTitle();
 		mPlanetTitles = getResources().getStringArray(R.array.nav_drawer_items);
@@ -64,7 +63,7 @@ public class MainActivity extends ActionBarActivity {
 
 		mDrawerToggle = new ActionBarDrawerToggle(this,
 		mDrawerLayout,
-		R.drawable.ic_drawer,
+		R.drawable.trans,
 		R.string.app_name,
 		R.string.app_name
 		)
@@ -91,6 +90,7 @@ public class MainActivity extends ActionBarActivity {
             SharedPreferences.Editor editor = pref.edit();
             editor.putBoolean("firstrun", false);
             editor.commit();
+            mDrawerLayout.openDrawer(Gravity.LEFT);
         }
         else{
         }
@@ -174,7 +174,10 @@ public class MainActivity extends ActionBarActivity {
     	btBackState = false;
     	}}, 3000);
     	btBackState = true;
-    	Toast.makeText(getApplicationContext(), R.string.exit_message, Toast.LENGTH_SHORT).show();
+    	Toast toast = Toast.makeText(getApplicationContext(), R.string.exit_message, Toast.LENGTH_LONG);
+    	View view = toast.getView();
+    	view.setBackgroundResource(R.drawable.toast_frame);
+    	toast.show();
     	} else finish();
     	}
     

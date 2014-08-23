@@ -27,3 +27,17 @@
 - 율전중학교 일정 리스트뷰 변경
 - ShowcaseView 기능 삭제
 - 그 외 소스 수정
+
+
+[BUILD_Let_Me_Go_AVRIL_LAVIGNE]
+
+- Google 최신 UI : Material Design 적용
+- 액션바 색상 변경 기능 추가
+- 라이센스 파일 수정
+- 급식 새로고침 강제 종료 수정
+- 일정 수정
+- 알레르기 정보 표기 방식 변경 (ActionBarActivity -> DialogFragment)
+- 학생부 소식 공지 추가
+- PagerTitleStrip 백그라운드 색생 변경 (#ff2d2d2d)
+- 불필요 리소스 전부 삭제
+- 그 외 소스 수정

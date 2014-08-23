@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <style name="illusion" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/actionbar</item>
+        <item name="actionBarStyle">@style/actionbar</item>
+    </style>
+    
+    <style name="actionbar" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="android:icon">@drawable/ic_drawer</item>
+        <item name="android:height">56dp</item>
+        <item name="android:background">#ff000000</item>
+        <item name="android:titleTextStyle">@style/actionbartitle</item>
+    </style>
+    
+    <style name="actionbartitle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    
+    <style name="Purple" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/ActionbarPurpleColor</item>
+    </style>
+    
+    <style name="ActionbarPurpleColor" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">#AA66CC</item>
+        <item name="android:titleTextStyle">@style/actionbartitle</item>
+        <item name="android:icon">@drawable/ic_drawer</item>
+        <item name="android:height">56dp</item>
+        <item name="titleTextStyle">@style/actionbartitle</item>
+    </style>
+    
+    <style name="Green" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/ActionbarGreenColor</item>
+    </style>
+    
+    <style name="ActionbarGreenColor" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">#96aa39</item>
+        <item name="android:titleTextStyle">@style/actionbartitle</item>
+        <item name="android:icon">@drawable/ic_drawer</item>
+        <item name="android:height">56dp</item>
+        <item name="titleTextStyle">@style/actionbartitle</item>
+    </style>
+    
+    <style name="Red" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/ActionbarRedColor</item>
+    </style>
+    
+    <style name="ActionbarRedColor" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">#c74b46</item>
+        <item name="android:titleTextStyle">@style/actionbartitle</item>
+        <item name="android:icon">@drawable/ic_drawer</item>
+        <item name="android:height">56dp</item>
+        <item name="titleTextStyle">@style/actionbartitle</item>
+    </style>
+    
+    <style name="Orange" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/ActionbarOrangeColor</item>
+    </style>
+    
+    <style name="ActionbarOrangeColor" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">#f4842d</item>
+        <item name="android:titleTextStyle">@style/actionbartitle</item>
+        <item name="android:icon">@drawable/ic_drawer</item>
+        <item name="android:height">56dp</item>
+        <item name="titleTextStyle">@style/actionbartitle</item>
+    </style>
+    
+    <style name="Blue" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/ActionbarBlueColor</item>
+    </style>
+    
+    <style name="ActionbarBlueColor" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">#3f9fe0</item>
+        <item name="android:titleTextStyle">@style/actionbartitle</item>
+        <item name="android:icon">@drawable/ic_drawer</item>
+        <item name="android:height">56dp</item>
+        <item name="titleTextStyle">@style/actionbartitle</item>
+    </style>
+    
+    <style name="Gray" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/ActionbarGrayColor</item>
+    </style>
+    
+    <style name="ActionbarGrayColor" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">#666666</item>
+        <item name="android:titleTextStyle">@style/actionbartitle</item>
+        <item name="android:icon">@drawable/ic_drawer</item>
+        <item name="android:height">56dp</item>
+        <item name="titleTextStyle">@style/actionbartitle</item>
+    </style>
+    
+</resources>

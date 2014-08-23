@@ -1,8 +1,6 @@
 package com.woncheol.yuljeon;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
@@ -16,10 +14,11 @@ public class TutorialWebview extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+    	Util.setAppTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tutorial_webview);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3f9fe0")));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
 
         mPager = (ViewPager)findViewById(R.id.pager);
         mPager.setAdapter(new PagerAdapterClass(getApplicationContext()));

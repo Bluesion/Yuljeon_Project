@@ -64,12 +64,12 @@ public class Schedule extends Fragment {
        items.add(new EntryItem("2학년 영어듣기 평가", "2014.09.03 (수)"));
        items.add(new EntryItem("3학년 영어듣기 평가", "2014.09.04 (목)"));
        items.add(new EntryItem("라빈 여신님 탄신일♥", "2014.09.27 (토)"));
-       items.add(new EntryItem("2학기 중간고사", "2014.09.29 (월)"));
-       items.add(new EntryItem("2학기 중간고사", "2014.09.30 (화)"));
        
        items.add(new SectionItem("2014년 10월 일정"));
-       items.add(new EntryItem("2학기 중간고사", "2014.10.01 (수)"));
-       items.add(new EntryItem("학교 축제", "2014.10.23 (목)"));
+       items.add(new EntryItem("2학기 중간고사", "2014.10.06 (월)"));
+       items.add(new EntryItem("2학기 중간고사", "2014.10.07 (화)"));
+       items.add(new EntryItem("2학기 중간고사", "2014.10.08 (수)"));
+       items.add(new EntryItem("학교 축제 (밤밭제)", "2014.10.23 (목)"));
        items.add(new EntryItem("현장 체험 학습", "2014.10.24 (금)"));
        
        items.add(new SectionItem("2014년 11월 일정"));
@@ -94,7 +94,7 @@ public class Schedule extends Fragment {
        listview.setAdapter(adapter);
        
        mHelper = new CroutonHelper(getActivity());
-	   mHelper.setText("일정은 학사력을 기준으로 작성되었으며\n학교 사정에 의해 언제든지 바뀔 수 있습니다\n\n※ 세월호 사건으로 인해 삭제된 일정이 존재합니다");
+	   mHelper.setText("일정은 학사력을 기준으로 작성되었으며\n학교 사정에 의해 언제든지 바뀔 수 있습니다");
 	   mHelper.setDuration(2500);
 	   mHelper.setStyle(Style.INFO);
 	   mHelper.show();

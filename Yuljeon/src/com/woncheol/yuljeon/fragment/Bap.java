@@ -5,7 +5,6 @@ import toast.library.meal.MealLibrary;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -19,7 +18,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import com.woncheol.yuljeon.About;
+import com.woncheol.yuljeon.MyAlertDialogFragment;
 import com.woncheol.yuljeon.R;
 import com.woncheol.yuljeon.adapter.BapListViewAdapter;
 
@@ -75,6 +74,7 @@ public class Bap extends Fragment {
 				addErrorList();
 			}
 		}
+		
 		return rootView;
 	}
 	
@@ -82,6 +82,11 @@ public class Bap extends Fragment {
 	public void onStart() {
 		super.onStart();
 	}
+	
+	void showDialog() {
+		MyAlertDialogFragment alertdFragment = new MyAlertDialogFragment();
+		alertdFragment.show(getFragmentManager(), "");  
+    }
 
 	private void sync() {
 		isSync = true;
@@ -95,9 +100,9 @@ public class Bap extends Fragment {
 				mHandler.sendEmptyMessage(0);
 
 				try {
-					calender = MealLibrary.getDate("goe.go.kr", "J100002436",
+					calender = MealLibrary.getDateNew("goe.go.kr", "J100002436",
 							"4", "03", "1");
-					lunch = MealLibrary.getMeal("goe.go.kr", "J100002436", "4",
+					lunch = MealLibrary.getMealNew("goe.go.kr", "J100002436", "4",
 							"03", "2");
 
 					save("calender", calender);
@@ -197,8 +202,7 @@ public class Bap extends Fragment {
 		}
 		
 		if (ItemId == R.id.about) {
-			Intent i = new Intent(getActivity(), About.class);
-			startActivity(i);
+			showDialog();
 		}
 
 		return super.onOptionsItemSelected(item);

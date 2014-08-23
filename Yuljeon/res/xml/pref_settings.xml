@@ -2,7 +2,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android">
         
     <PreferenceCategory
-            android:title="일반 설정">
+            android:title="튜토리얼">
         
         <Preference
             android:title="튜토리얼 다시 보기"
@@ -12,11 +12,43 @@
         </PreferenceCategory>
         
     <PreferenceCategory
-            android:title="이 앱에 대해">
+            android:title="애플리케이션 정보">
         
         <Preference
-            android:title="앱 정보"
-            android:key="application" />
+            android:title="앱 버전"
+            android:key="version"
+            android:summary="BUILD_Let_Me_Go_AVRIL_LAVIGNE" />
+        
+        <Preference
+            android:key="changelog"
+            android:title="체인지 로그" />
+        
+        <Preference
+            android:key="license"
+            android:title="라이센스" />
+        
+        </PreferenceCategory>
+        
+    <PreferenceCategory
+            android:title="그 외">
+        
+        <ListPreference
+            android:title="액션바 색상 바꾸기"
+            android:summary="액션바 색상을 바꾼 후, 꼭 앱을 재시작해주세요"
+            android:defaultValue="0"
+            android:key="actionbar"
+            android:entries="@array/action_entries"
+            android:entryValues="@array/action_values" />
+        
+        <Preference
+            android:title="율전중 앱 소스"
+            android:summary="https://github.com/gpillusion/Yuljeon_Project"
+            android:key="Opensource" />
+        
+        <Preference
+            android:key="singo"
+            android:title="제작자에게 메일 보내기"
+            android:summary="메일 앱이 디바이스에 설치되어 있어야 합니다" />
         
         </PreferenceCategory>
         

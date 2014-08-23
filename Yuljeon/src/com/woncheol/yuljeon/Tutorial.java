@@ -1,24 +1,27 @@
 package com.woncheol.yuljeon;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
- 
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
+
 public class Tutorial extends ActionBarActivity {
      
 	private ViewPager mPager;
+	Animation animFadein;
+	TextView txtMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+    	Util.setAppTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tutorial);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#f4842d")));
 
         mPager = (ViewPager)findViewById(R.id.pager);
         mPager.setAdapter(new PagerAdapterClass(getApplicationContext()));
@@ -43,7 +46,7 @@ public class Tutorial extends ActionBarActivity {
         }
     }
 
-    private class PagerAdapterClass extends PagerAdapter {
+	private class PagerAdapterClass extends PagerAdapter {
 
         private LayoutInflater mInflater;
         public PagerAdapterClass(Context c){
@@ -56,11 +59,17 @@ public class Tutorial extends ActionBarActivity {
             return 6;
         }
 
-        @Override
+		@Override
         public Object instantiateItem(View pager, int position) {
             View v = null;
             if(position == 0){
                 v = mInflater.inflate(R.layout.tutorial_0, null);
+                txtMessage = (TextView) v.findViewById(R.id.textView);
+                
+                animFadein = AnimationUtils.loadAnimation(getApplicationContext(),
+                        R.anim.fade_in);
+                txtMessage.setVisibility(View.VISIBLE);
+                txtMessage.startAnimation(animFadein);
             }
             else if(position == 1){
             	v = mInflater.inflate(R.layout.tutorial_1, null);
@@ -78,6 +87,7 @@ public class Tutorial extends ActionBarActivity {
             ((ViewPager)pager).addView(v, 0);
             return v;
         }
+		
         @Override
         public void destroyItem(View pager, int position, Object view){
             ((ViewPager)pager).removeView((View)view);

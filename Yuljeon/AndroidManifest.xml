@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.woncheol.yuljeon"
-    android:versionCode="3"
-    android:versionName="2.0.1" >
+    android:versionCode="5"
+    android:versionName="2.1.1" >
 
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
     
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
 
@@ -16,7 +16,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+        android:theme="@style/illusion" >
         <meta-data android:name="com.sec.android.support.multiwindow" android:value="true" />
         <meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_W" android:resource="@dimen/multiwindow_default_width" />
         <meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H" android:resource="@dimen/multiwindow_default_height" />
@@ -24,8 +24,7 @@
         <meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H" android:resource="@dimen/multiwindow_min_height" />
         <activity
             android:name="com.woncheol.yuljeon.MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -34,31 +33,10 @@
         </activity>
         <activity
             android:name="com.woncheol.yuljeon.Tutorial"
-            android:label="튜토리얼"/>
-        <activity
-            android:name="com.woncheol.yuljeon.About"
-            android:label="식단" />
+            android:label="튜토리얼" />
         <activity
             android:name="com.woncheol.yuljeon.TutorialWebview"
             android:label="도움말" />
-        <activity
-            android:name="com.woncheol.yuljeon.Builder"
-            android:label="히든메뉴" />
-        <activity
-            android:name="com.woncheol.yuljeon.Version"
-            android:label="히든메뉴" />
-        <activity
-            android:name="com.woncheol.yuljeon.Prefstechhelp"
-            android:label="도움주신 분" />
-        <activity
-            android:name="com.woncheol.yuljeon.Prefstester"
-            android:label="테스터들" />
-        <activity
-            android:name="com.woncheol.yuljeon.Prefsapplication"
-            android:label="이 앱에 대해" />
-        <activity
-            android:name="com.woncheol.yuljeon.Schedule"
-            android:label="율전중 일정" />
         <activity
             android:name="com.woncheol.yuljeon.License"
             android:label="라이센스" />
